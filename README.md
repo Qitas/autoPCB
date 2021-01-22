@@ -1,7 +1,5 @@
-﻿# [autoPCB](https://github.com/qitas/autoPCB) 
+﻿# [note](https://github.com/qitas/note)
 
-构建自动化PCB设计资源
+note整理
 
-[![sites](http://182.61.61.133/link/resources/head.png)](http://www.qitas.cn) 
-
-## 锻造最美之器
+### 年轮在骨，厚积于芯
