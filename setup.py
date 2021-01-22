@@ -1,148 +1,70 @@
-# -*- coding: utf-8 -*-
-"""`sphinx_rtd_theme` lives on `Github`_.
+# Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
 
-.. _github: https://github.com/readthedocs/sphinx_rtd_theme
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
 
-"""
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
 
-import os
-import subprocess
-import distutils.cmd
-import setuptools.command.build_py
-from io import open
-from setuptools import setup
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
 
+import json
+from setuptools import setup, find_packages
 
-class WebpackBuildCommand(setuptools.command.build_py.build_py):
+# Load package.json contents
+with open("package.json") as data:
+    package = json.load(data)
 
-    """Prefix Python build with Webpack asset build"""
-
-    def run(self):
-        if not 'CI' in os.environ and not 'TOX_ENV_NAME' in os.environ:
-            subprocess.run(['npm', 'install'], check=True)
-            subprocess.run(['node_modules/.bin/webpack', '--config', 'webpack.prod.js'], check=True)
-        setuptools.command.build_py.build_py.run(self)
-
-
-class WebpackDevelopCommand(distutils.cmd.Command):
-
-    description = "Run Webpack dev server"
-
-    user_options = []
-
-    def initialize_options(self):
-        pass
-
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        subprocess.run(
-            ["node_modules/.bin/webpack-dev-server", "--open", "--config", "webpack.dev.js"],
-            check=True
-        )
-
-
-class UpdateTranslationsCommand(distutils.cmd.Command):
-
-    description = "Run all localization commands"
-
-    user_options = []
-    sub_commands = [
-        ('extract_messages', None),
-        ('update_catalog', None),
-        ('transifex', None),
-        ('compile_catalog', None),
+# Load list of dependencies
+with open("requirements.txt") as data:
+    install_requires = [
+        line for line in data.read().split("\n")
+        if line and not line.startswith("#")
     ]
 
-    def initialize_options(self):
-        pass
+# Load README contents
+with open("README.md", encoding = "utf-8") as data:
+    long_description = data.read()
 
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        for cmd_name in self.get_sub_commands():
-            self.run_command(cmd_name)
-
-
-class TransifexCommand(distutils.cmd.Command):
-
-    description = "Update translation files through Transifex"
-
-    user_options = []
-
-    def initialize_options(self):
-        pass
-
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        subprocess.run(['tx', 'push', '--source'], check=True)
-        subprocess.run(['tx', 'pull', '--mode', 'onlyreviewed', '-f', '-a'], check=True)
-
-
+# Package description
 setup(
-    name='sphinx_rtd_theme',
-    version='0.5.1',
-    url='https://github.com/readthedocs/sphinx_rtd_theme',
-    license='MIT',
-    author='Dave Snider, Read the Docs, Inc. & contributors',
-    author_email='dev@readthedocs.org',
-    description='Read the Docs theme for Sphinx',
-    long_description=open('README.rst', encoding='utf-8').read(),
-    cmdclass={
-        'update_translations': UpdateTranslationsCommand,
-        'transifex': TransifexCommand,
-        'build_py': WebpackBuildCommand,
-        'watch': WebpackDevelopCommand,
-    },
-    zip_safe=False,
-    packages=['sphinx_rtd_theme'],
-    package_data={'sphinx_rtd_theme': [
-        'theme.conf',
-        '*.html',
-        'static/css/*.css',
-        'static/css/fonts/*.*'
-        'static/js/*.js',
-    ]},
-    include_package_data=True,
-    # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
+    name = "mkdocs-material",
+    version = package["version"],
+    url = package["homepage"],
+    license = package["license"],
+    description = package["description"],
+    long_description = long_description,
+    long_description_content_type = "text/markdown",
+    author = package["author"]["name"],
+    author_email = package["author"]["email"],
+    keywords = package["keywords"],
+    classifiers = [
+        "Development Status :: 5 - Production/Stable",
+        "Environment :: Web Environment",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: JavaScript",
+        "Programming Language :: Python",
+        "Topic :: Documentation",
+        "Topic :: Software Development :: Documentation",
+        "Topic :: Text Processing :: Markup :: HTML"
+    ],
+    packages = find_packages(exclude = ["src"]),
+    include_package_data = True,
+    install_requires = install_requires,
     entry_points = {
-        'sphinx.html_themes': [
-            'sphinx_rtd_theme = sphinx_rtd_theme',
+        "mkdocs.themes": [
+            "material = material",
         ]
     },
-    install_requires=[
-        'sphinx'
-    ],
-    tests_require=[
-        'pytest',
-    ],
-    extras_require={
-        'dev': [
-            'transifex-client',
-            'sphinxcontrib-httpdomain',
-            'bump2version',
-        ],
-    },
-    classifiers=[
-        'Framework :: Sphinx',
-        'Framework :: Sphinx :: Theme',
-        'Development Status :: 5 - Production/Stable',
-        'License :: OSI Approved :: MIT License',
-        'Environment :: Console',
-        'Environment :: Web Environment',
-        'Intended Audience :: Developers',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Operating System :: OS Independent',
-        'Topic :: Documentation',
-        'Topic :: Software Development :: Documentation',
-    ],
+    zip_safe = False
 )
