@@ -10,3 +10,4 @@
    :caption: 相关书籍
 
    ./sociology/1
+   ./sociology/2
