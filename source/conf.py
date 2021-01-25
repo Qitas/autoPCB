@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
 
-project = u'从心开始'
+project = u'读书笔记'
 copyright = u'2021,Qitas'
 author = u'Qitas'
 
@@ -151,7 +151,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'qitas_note.tex', u'从心开始',
+    (master_doc, 'qitas_note.tex', u'读书笔记',
     u'qitas', 'manual'),
 ]
 
@@ -161,7 +161,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'qitas_note', u'从心开始',
+    (master_doc, 'qitas_note', u'读书笔记',
     [author], 1)
 ]
 
@@ -172,8 +172,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'qitas_note', u'从心开始',
-    author, 'qitas_note', '探索心世界.',
+    (master_doc, 'qitas_note', u'读书笔记',
+    author, 'qitas_note', '探索内心世界',
     'Miscellaneous'),
 ]
 

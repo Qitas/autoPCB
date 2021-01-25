@@ -1,5 +1,10 @@
+*************
 《被讨厌的勇气》
-============
+*************
+
+《被讨厌的勇气》
+================
+
 
 作者：岸见一郎
 
@@ -26,7 +31,7 @@
 
 
 自我的枷锁和解放
-----------
+----------------
 
 Need more than processors to build a system
   * Large cost to license other IPs in SoC: cache, interconnect, graphics, camera ISP, etc.
