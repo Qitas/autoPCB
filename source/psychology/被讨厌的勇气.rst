@@ -1,60 +1,80 @@
-*************
+****************
 《被讨厌的勇气》
-*************
+****************
 
-《被讨厌的勇气》
-================
+.. figure:: img/1.jpg
+   :width: 70%
+   :align: center
 
+   心理学图书推荐
 
 作者：岸见一郎
 
-1956年生于京都，高中时便以哲学为志向，进入大学后屡次到老师府上进行辩论。京都大学研究生院文学研究系博士课程满期退学。1989年起致力于研究专业哲学和阿德勒心理学。
-主要活动领域是阿德勒（Alfred Adler，1870-1937）心理学及古代哲学的执笔与演讲，同时还在精神科医院为许多青年做心理辅导。日本阿德勒心理学会认定顾问。
+1956年生于京都，京都大学研究生院文学研究系博士课程满期退学。1989年起致力于研究专业哲学和阿德勒心理学。
+主要活动领域是阿德勒（Alfred Adler，1870-1937）心理学及古代哲学的执笔与演讲，同时还在精神科医院为许多青年做心理辅导。
 
 作者：古贺史健
 
 1973年出生，以对话创作（问答体裁）见长，他创作的极具现场感与节奏感的采访稿广受好评，采访集《16岁的教科书》系列累计销量突破70万册。著有《想要让20岁的自己接受的文章讲义》。
+
 近30岁的时候邂逅阿德勒心理学，并被其颠覆常识的思想所震撼。之后，连续数年拜访京都的岸见一郎并向其请教阿德勒心理学的本质。本书中他以希腊哲学的古典手法“对话篇”进行内容呈现。
 
-.. figure:: img/1.jpg
-   :width: 90%
-   :align: center
 
-   最新阅读书籍推荐
-
-
-勇气的心理学
-----------------
+读后总结
+================
 
 《被讨厌的勇气》并不是要去吸引被讨厌的负向能量，而是，如果这是我生命想绽放出最美的光彩，那么，即使有被讨厌的可能，我都要用自己的双手双脚往那里走去。
 因为拥有了被讨厌的勇气，于是有了真正幸福的可能。
 
+三个主要思想
+  * 目的论
+  * 课题分离
+  * 共同体理论
 
-自我的枷锁和解放
+
+目的论
 ----------------
 
-Need more than processors to build a system
-  * Large cost to license other IPs in SoC: cache, interconnect, graphics, camera ISP, etc.
-  * Need an attractive open-source platform to try new hardware ideas.
-  * Security and trusted execution are not complete without a full-system support.
-  * RISC-V hardware extensions: JIT runtime, vector, etc.
+心理创伤并不存在！决定我们自身的不是过去的经历，而是我们自己赋予经历的意义。
 
-The community lacks affordable RISC-V hardware platforms that run a variety of software
-  * Few low-cost, software-capable boards for the long tail of developers.
-  * Developers won’t spend $1000 for a new hardware just for software development.
+这是阿德勒的核心观点，与佛洛依德的原因论相悖。一切行为的发生，都是出于某种目的，即“善”。
+
+古希腊哲学中的“善”（buono）并无道德含义，仅指是否对我有利。这是“人生的谎言”的来由。
+
+  * 我们选择用愤怒这种工具，来表达权力关系，让他人服从与妥协。我们之所以产生某种情绪，是因为我们要使用这种情绪来达成目的，从这一点来看，情绪只是理智下的一种工具。
+  * 正是因为害怕失败，所以要制造出自己的缺陷。既然这缺陷无法消除（甚至本人会极力阻止它的消除），那么我的失败也是理所应当的，不是因为我的能力不够，而是因为我的固有缺陷。
+  * 不是因为缺点或错误而讨厌他人，而是为了要讨厌他，离开他，而搜集可以证明离开的证据。
+  * 为了控制他人，所以要弱势。阿德勒指出，婴儿是最强势的控制者，正是他们的弱势钳制着他人。夸大自己的不幸，是获取关注与同情的工具
 
 
-一切烦恼都来自人际关系
+课题分离
 ----------------
 
-* **Independently Maintained**: The RIOS Lab will be the solo nonprofit organization that governs the architecture development, ensures compliance, and will publish the design. The RIOS Lab will be the gatekeeper for both hardware and software, from SoC and firmware/drivers to high-level software and documentation. PicoRio will be vendor agnostic and not proprietary, and the RIOS Lab will work with academic and commercial organizations that will commit to its expansion and volume manufacturing.
+不干涉他人的课题，也不让他人课题干涉自己。这便是“自由”，而自由的证据就是“被别人讨厌”。
 
-* **Open Source**: PicoRio will open source as many components as possible, including the CPU and main SoC design, chip package and board design files, device drivers, and firmware. The exceptions are foundry related IPs (e.g., TSMC SRAM configurations), commercial high-speed interfaces, and complex commercial IP blocks like GPU. Nevertheless, our goal is to reduce the commercial closed source IPs for each successive release of PicoRio, with the long term goal of having a version that is as open as practical.
-
-* **High-Quality IPs**: A major goal of the RIOS Lab is to develop open-source, industrial strength hardware IPs to help the RISC-V ecosystem catch up with those of the older, proprietary ISAs. Thus, PicoRio aims at a high-quality silicon release using open-source IP. The IPs will have gone through rigorous real tapeout verifications that meet industry quality. The openness of PicoRio will not come at the cost of lower quality IP blocks. In addition, we will open source our verification process, which will help to improve transparency and trustworthiness.
-
-* **Modern Software Stack Support**: PicoRio utilizes a heterogeneous multicore architecture and is Linux-capable. We also designed PicoRio hardware to run modern managed languages such as JavaScript/WebAssembly as well as graphical applications like the Chrome web browser. At the RIOS Lab, PicoRio is also the hardware platform for several other open-source software projects, like the RISC-V ports for the V8 Javascript engine and the Chromium OS.
-
-* **Low-Power and Low-Cost**: The target metrics of PicoRio are long battery life and low cost, which is a better match to RISC-V today, instead of high performance and large memory.
+  * 不需要获得他人的**认可**，我们之所以希望获得认可，是受到了“奖惩教育”的影响。
+  * 他人的认可是他人的**课题**，并不是我的课题，一旦将他人的课题与自己的课题混淆，便会产生痛苦。
+  * 改变权在于自己，我变了，他人是否也发生了**改变**，并不重要，那是他人的课题。
 
 
+共同体理论
+----------------
+
+
+  * 跳出小圈子，看到更广阔的世界
+  * 他者贡献就是我们的价值
+  * 只要与人建立起平等关系，就是改变了生活方式，就可以感觉到自己的价值
+  * 不表扬也不批评，即不评价，但提倡鼓励
+  * 不要自我肯定，而要自我接纳
+  * 不要信用，而要无条件信任
+  * 人类具有寻求卓越（书中译为优越性）的本能，如果无法实现卓越，人们会倾向于走向卓越的另一端，即差劲
+  * 人生是由连续的刹那组成，所以计划式的人生根本不可能
+
+启发
+----------------
+
+一切烦恼都源自人际关系。如果世界上只有一个人，那么既无群体，也无个体。既然活在千万人中，那么我们就会受限于人际关系。不幸源自人际关系，而幸福也只能通过人际关系来获得。
+
+不坚持对错，不活在竞争之中。他人是伙伴，而非敌人。自卑感是促使我们不断前进，获得卓越的动力。认识到自己的不足，所以才能不断完善。
+
+每个人都可以改变，每个人都可以获得幸福。阻止我们的，不是无能，而是对改变的恐惧，缺乏勇气。
