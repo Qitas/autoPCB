@@ -9,4 +9,4 @@
    :maxdepth: 1
    :caption: 相关书籍
 
-   ./physics/1
+   ./sociology/1

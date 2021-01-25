@@ -9,4 +9,5 @@
 
    ./biology/1
    ./biology/2
-   ./physics/3
+   ./biology/3
+   ./biology/4
