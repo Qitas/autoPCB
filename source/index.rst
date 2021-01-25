@@ -42,3 +42,4 @@
    :maxdepth: 2
 
    economics
+   sociology
