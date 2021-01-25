@@ -1,5 +1,5 @@
 *************
-从生态开始
+哲学流派
 *************
 
 芯片是作为平台型的产品，所以需要有大量支撑的生态作为基点，而生态的建立可以反哺产品本身，还能实现生态溢价。
@@ -17,8 +17,8 @@ STM32生态
 .. toctree::
    :maxdepth: 2
 
-   ./ecosystem/introduction
-   ./ecosystem/roadmap
+   ./philosophy/introduction
+   ./philosophy/roadmap
 
 
 Arduino生态
@@ -27,7 +27,7 @@ Arduino生态
 .. toctree::
    :maxdepth: 2
 
-   ./ecosystem/introduction
-   ./ecosystem/roadmap
-   ./ecosystem/info
-   ./ecosystem/test
+   ./philosophy/introduction
+   ./philosophy/roadmap
+   ./philosophy/info
+   ./philosophy/test

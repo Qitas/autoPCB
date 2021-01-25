@@ -25,4 +25,5 @@
 .. toctree::
    :maxdepth: 2
 
-   soul
+   philosophy
+   psychology
