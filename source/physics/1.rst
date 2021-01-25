@@ -1,11 +1,8 @@
-Roadmap
-==================
+****************
+《时间简史》
+****************
 
-Three Phases of the PicoRio Development
-________________________________________
+作者：史蒂芬·霍金
 
-We aim to incrementally improve PicoRio with each new release. We divide the development of PicoRio into three phases:
+史蒂芬·霍金（Stephen Hawking, 1942-2018），出生于英国牛津，剑桥大学卢卡斯数学教授，英国剑桥大学著名物理学家，现代最伟大的物理学家之一、20世纪享有国际盛誉的伟人之一。
 
-* **First Phase (PicoRio 1.0)**: We include a basic 64-bit quad-core cache-coherent design (RV64GC) that runs full Linux. We have already booted a Chromium OS kernel in command line mode. A standalone version of Chrome V8 Javascript engine will run directly on the kernel. We expect an early beta release late this year. This “headless” version of PicoRio should be fine for software development.
-* **Second Phase (PicoRio 2.0)**: In addition to improving the v1.0 hardware, we are working with Imagination™ to include a complete display pipeline (including a GPU) with video encode/decode capabilities to run graphics intensive applications like web browsers.
-* **Third Phase (PicoRio 3.0)**: Building upon the v2.0 hardware, we plan to further improve the CPU performance to bring PicoRio to the level of a pad computer or laptop.
