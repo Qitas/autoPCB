@@ -4,7 +4,7 @@
 
 A picture will show this better than I can:
 
-.. figure:: /img/被讨厌的勇气.jpg
+.. figure:: psychology/img/被讨厌的勇气.jpg
    :width: 90%
    :align: center
 

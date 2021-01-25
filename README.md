@@ -1,5 +1,3 @@
-﻿# [从芯开始](https://github.com/qitas/docs)
-
-<<从芯开始>>
+﻿# [note](https://github.com/qitas/note)
 
 ### 年轮在骨，厚积于芯
