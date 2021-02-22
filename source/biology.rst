@@ -1,11 +1,11 @@
 *************
-生物学笔记
+生物学篇
 *************
 
 
 .. toctree::
    :maxdepth: 1
-   :caption: 相关书籍
+   :caption: 读书笔记
 
    ./biology/1
    ./biology/2
