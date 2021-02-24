@@ -1,6 +1,15 @@
 *************
-历史哲学
+哲学思辨
 *************
+
+什么是哲学？
+=============
+
+Marilyn Adams：哲学就是努力思考最重要的问题，并尝试澄清问题和答案。
+
+“什么是哲学？”，本身就是哲学问题。
+
+https://philosophybites.com/
 
 从科学学与科学史的意义上来说，哲学家是指拥有自己的哲学范式、有原创的哲学基础理论与哲学体系的哲学学人。
 
@@ -20,27 +29,6 @@
     7、大哲学家帮助我们认识自己、认识世界、认识存在以及认识神性；
     8、大哲学家有他的标准，他们是人类精神的立法者。
 
-
-苏格拉底
-=============
-
-.. toctree::
-   :maxdepth: 1
-
-   ./philosophy/introduction
-   ./philosophy/roadmap
-
-
-柏拉图
-=============
-
-.. toctree::
-   :maxdepth: 1
-
-   ./philosophy/introduction
-   ./philosophy/roadmap
-   ./philosophy/info
-   ./philosophy/test
 
 亚里士多德
 =============
