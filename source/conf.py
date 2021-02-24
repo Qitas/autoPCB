@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
 
-project = u'从心开始'
+project = u'读书笔记'
 copyright = u'2021,Qitas'
 author = u'Qitas'
 
