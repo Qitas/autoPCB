@@ -17,4 +17,6 @@
 
    ./physics/1
    ./physics/2
+   ./physics/3
+   ./physics/4
 
