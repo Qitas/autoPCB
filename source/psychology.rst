@@ -43,8 +43,8 @@
    :maxdepth: 1
    :caption: 相关阅读
 
-   ./psychology/自卑与超越
-   ./psychology/被讨厌的勇气
+   ./psychology/1
+   ./psychology/2
 
 
 卡尔·荣格

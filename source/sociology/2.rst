@@ -28,3 +28,7 @@
 
 
 在一个国家，如果GDP为负，大部分人都会放弃努力，只有极少数人会坚持努力创造。
+
+.. figure:: ../images/6.jpeg
+   :width: 100%
+   :align: center
