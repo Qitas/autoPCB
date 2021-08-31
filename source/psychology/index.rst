@@ -12,7 +12,7 @@
     阿尔弗雷德·阿德勒与弗洛伊德、荣格被并称为“心理学三大巨头”。
 
 西格蒙德·弗洛伊德
-=============
+=================
 
 西格蒙德·弗洛伊德（Sigmund Freud，1856年5月6日—1939年9月23日）是奥地利精神病医师、心理学家、精神分析学派创始人。
 
@@ -20,9 +20,9 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: 相关书籍
+   :caption: 图书推荐
 
-   ./psychology/梦的解析
+   梦的解析
 
 
 阿尔弗雷德·阿德勒
@@ -41,10 +41,10 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: 相关阅读
+   :caption: 图书推荐
 
-   ./psychology/1
-   ./psychology/2
+   1
+   2
 
 
 卡尔·荣格
@@ -54,7 +54,7 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: 相关书籍
+   :caption: 图书推荐
 
-   ./psychology/心理类型
+   心理类型
 

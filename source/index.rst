@@ -49,8 +49,8 @@
 .. toctree::
    :maxdepth: 2
 
-   philosophy
-   psychology
+   philosophy/index
+   psychology/index
 
 与社会的连接
 ---------------
@@ -60,8 +60,8 @@
 .. toctree::
    :maxdepth: 2
 
-   sociology
-   economics
+   sociology/index
+   economics/index
 
 .. note::
     对于大多数人而言，内外的认知，都是为和社会建立更好的连接。

@@ -7,8 +7,9 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: 读书笔记
+   :caption: 图书推荐
 
-   ./sociology/1
-   ./sociology/2
-   ./sociology/3
+   1
+   2
+   3
+   80

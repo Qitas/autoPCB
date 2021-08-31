@@ -7,7 +7,7 @@
    :maxdepth: 1
    :caption: 图书推荐
 
-   ./biology/1
-   ./biology/2
-   ./biology/3
-   ./biology/4
+   1
+   2
+   3
+   4

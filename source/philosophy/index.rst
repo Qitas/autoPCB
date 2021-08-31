@@ -18,42 +18,6 @@ https://philosophybites.com/
 有没有自己的哲学范式和原创的哲学基础理论，是哲学家与一般的哲学学者的根本区别。
 
 
-亚里士多德
-=============
-
-.. toctree::
-   :maxdepth: 1
-
-   ./philosophy/introduction
-   ./philosophy/roadmap
-
-康德
-=============
-
-.. toctree::
-   :maxdepth: 1
-
-   ./philosophy/introduction
-   ./philosophy/roadmap
-
-黑格尔
-=============
-
-.. toctree::
-   :maxdepth: 1
-
-   ./philosophy/introduction
-   ./philosophy/roadmap
-
-尼采
-=============
-
-.. toctree::
-   :maxdepth: 1
-
-   ./philosophy/introduction
-   ./philosophy/roadmap
-
 .. note::
     卡尔雅思贝尔斯的8条大哲学家评选标准：
 

@@ -10,8 +10,8 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: 读书笔记
+   :caption: 图书推荐
 
-   ./economics/1
+   1
 
 
