@@ -37,7 +37,7 @@
    :maxdepth: 2
 
    physics/index
-   biology
+   biology/index
 
 探索内部宇宙
 ---------------

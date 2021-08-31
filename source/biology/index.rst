@@ -5,7 +5,7 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: 读书笔记
+   :caption: 图书推荐
 
    ./biology/1
    ./biology/2

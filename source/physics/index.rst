@@ -13,7 +13,7 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: 列表
+   :caption: 图书推荐
 
    1
    2
