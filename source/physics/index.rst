@@ -13,10 +13,10 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: 读书笔记
+   :caption:
 
-   ./physics/1
-   ./physics/2
-   ./physics/3
-   ./physics/4
+   ./1
+   ./2
+   ./3
+   ./60
 

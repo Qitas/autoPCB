@@ -36,7 +36,7 @@
 .. toctree::
    :maxdepth: 2
 
-   physics
+   physics/index
    biology
 
 探索内部宇宙
