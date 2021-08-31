@@ -2,7 +2,7 @@
 从心开始
 *********
 
-``γνωθι σεαυτόν ``，``Know yourself``，``认识你自己``
+``γνωθι σεαυτόν`` ， ``Know yourself`` ， ``认识你自己``
 
 .. contents::
     :local:
@@ -17,13 +17,16 @@
 近期读完
 ---------------
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    latest  <latest/index>
 
 
-图书整理
+分类整理
 ===============
+
+.. contents::
+    :local:
 
 认识真实世界
 ---------------
