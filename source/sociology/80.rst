@@ -9,6 +9,7 @@
 .. figure:: ./img/80.jpg
    :width: 80%
    :align: center
+    :target: https://book.douban.com/subject/6712255/
 
 作者简介
 ------------
@@ -33,5 +34,5 @@
 ------------
 
 .. figure:: ../images/80.jpg
-   :width: 100%
+   :width: 80%
    :align: center
