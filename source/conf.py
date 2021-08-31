@@ -173,7 +173,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'qitas_note', u'读书笔记',
-    author, 'qitas_note', '探索内心世界',
+    author, 'qitas_note', '内外皆探索',
     'Miscellaneous'),
 ]
 
