@@ -6,17 +6,18 @@
 * 关键词： ``人类学``
 * 作者： [英国] 奈吉尔·巴利
 
+.. contents::
+    :local:
+
 .. figure:: ./img/80.jpg
    :width: 80%
    :align: center
-    :target: https://book.douban.com/subject/6712255/
 
 作者简介
 ------------
 
 奈吉尔·巴利 (Nigel Barley)，牛津大学人类学博士，前大英博物馆民族志学组附属人类博物馆（Museumof Mankind of the Ethnography Depar tment ofthe British Museum）馆长。
 
-著有 Dancing on theGrave、Not a Hazardous Sport 、Ceremony、TheDuke of Puddle Dock、Smashing Pots 等书， 并为Channel4 电视台编写、主持Native Land 影集。
 
 内容简介
 ------------
@@ -25,7 +26,7 @@
 
 不同于一般的人类学研究报告，这是一部令人捧腹不止的人类学笔记，透过幽默的笔调，读者看到了人类学者如何与研究对象进行互动，在互动中如何调整他的学术成见，以及田野工作上的琐事如何影响后来研究结果、研究的盲点与反思。
 
-因此不管是严肃的读者、无聊地只想打发时间或者是向往非洲原始部落的异国情调而蠢蠢欲动的旅人，巴利这本书绝对是一个有趣的选择。
+因此不管是严肃的读者、无聊地只想打发时间或者是向往非洲原始部落的异国情调而蠢蠢欲动的旅人，这本书绝对是一个有趣的选择。
 
 读书笔记
 ------------
