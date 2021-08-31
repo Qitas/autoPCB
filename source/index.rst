@@ -2,7 +2,7 @@
 内外皆探索
 ************
 
-``γνωθι σεαυτόν`` ， ``Know yourself`` ， ``认识你自己``
+``γνωθι σεαυτόν`` ，``Know yourself`` ，``认识你自己``
 
 .. contents::
     :local:
@@ -17,7 +17,7 @@
 .. toctree::
    :maxdepth: 1
 
-   近期阅读  <latest/index>
+   latest/index
 
 
 分类整理
