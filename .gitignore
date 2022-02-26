@@ -1,4 +1,6 @@
-*.bak
-/build
-*DS_Store*
-.vscode
+node_modules/
+gh-pages
+gh-pages.pub
+config.toml.keepit
+config.toml.Old
+deploy.sh

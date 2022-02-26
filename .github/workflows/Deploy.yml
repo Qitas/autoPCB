@@ -1,0 +1,36 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v2
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.91.2'
+          extended: true
+
+      - name: Build Hugo
+        run: HUGO_ENV=production hugo --gc --minify
+
+      - name: Create CNAME
+        run: |
+          echo -e "blog.qitas.cn" >> ./public/CNAME
+
+      - name: Deploy to Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.QITAS_TOKEN }}
+          external_repository: Qitas/blog
+          PUBLISH_BRANCH: gh-pages
+          publish_dir: ./public
+          commit_message: Sync Docs
+
