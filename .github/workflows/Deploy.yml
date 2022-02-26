@@ -23,13 +23,13 @@ jobs:
 
       - name: Create CNAME
         run: |
-          echo -e "blog.qitas.cn" >> ./public/CNAME
+          echo -e "note.qitas.cn" >> ./public/CNAME
 
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.QITAS_TOKEN }}
-          external_repository: Qitas/blog
+          external_repository: Qitas/note
           PUBLISH_BRANCH: gh-pages
           publish_dir: ./public
           commit_message: Sync Docs
