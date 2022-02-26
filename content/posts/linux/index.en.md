@@ -8,8 +8,8 @@ author: "Qitas"
 authorLink: "https://www.qitas.cn"
 description: "This article shows the basic Markdown syntax and format."
 resources:
-- name: "index"
-  src: "index.png"
+- name: "featured-image"
+  src: "featured-image.png"
 
 tags: ["Linux", "Ubuntu"]
 categories: ["Linux"]

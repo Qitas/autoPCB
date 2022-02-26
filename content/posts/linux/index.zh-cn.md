@@ -8,8 +8,8 @@ author: "Qitas"
 authorLink: "https://www.qitas.cn"
 description: "这篇文章总结了基本的Linux使用."
 resources:
-- name: "index"
-  src: "index.png"
+- name: "featured-image"
+  src: "featured-image.png"
 
 tags: ["Linux", "Ubuntu"]
 categories: ["Linux"]
