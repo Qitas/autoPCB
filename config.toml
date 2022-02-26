@@ -9,7 +9,7 @@ theme = "LoveIt"
 
 # website title
 # 网站标题
-title = "QitasNote"
+title = "工作笔记"
 
 # whether to use robots.txt
 # 是否使用 robots.txt
@@ -73,10 +73,10 @@ enableEmoji = true
         title = ""
         weight = 4
       [[languages.zh-cn.menu.main]]
-        identifier = "Note"
+        identifier = "Blog"
         pre = ""
-        name = "笔记"
-        url = "https://note.qitas.cn/"
+        name = "博客"
+        url = "https://blog.qitas.cn/"
         title = ""
         weight = 5
     [languages.zh-cn.params]
