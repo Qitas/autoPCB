@@ -268,7 +268,7 @@ enableEmoji = true
           # title shown in home page (HTML format is supported)
           title = ""
           # subtitle shown in home page
-          subtitle = "Long term accumulation"
+          subtitle = "Delay gratification"
           # whether to use typeit animation for subtitle
           typeit = true
           # whether to show social links
@@ -300,7 +300,7 @@ enableEmoji = true
   defaultTheme = "auto"
   # public git repo url only then enableGitInfo is true
   # 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效
-  gitRepo = "https://github.com/Qitas/note"
+  gitRepo = "https://github.com/Qitas/Note"
   # which hash function used for SRI, when empty, no SRI is used ("sha256", "sha384", "sha512", "md5")
   # 哪种哈希函数用来 SRI, 为空时表示不使用 SRI ("sha256", "sha384", "sha512", "md5")
   fingerprint = ""
@@ -617,7 +617,7 @@ enableEmoji = true
   [params.typeit]
     # typing speed between each step (measured in milliseconds)
     # 每一步的打字速度 (单位是毫秒)
-    speed = 500
+    speed = 255
     # blinking speed of the cursor (measured in milliseconds)
     # 光标的闪烁速度 (单位是毫秒)
     cursorSpeed = 1000
@@ -626,7 +626,7 @@ enableEmoji = true
     cursorChar = "|"
     # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
     # 打字结束之后光标的持续时间 (单位是毫秒, "-1" 代表无限大)
-    duration = 2000
+    duration = 5000
 
   # Site verification code for Google/Bing/Yandex/Pinterest/Baidu
   # 网站验证代码，用于 Google/Bing/Yandex/Pinterest/Baidu
@@ -710,8 +710,8 @@ enableEmoji = true
     guessSyntax = true
     lineNos = true
     lineNumbersInTable = true
-    # false is a necessary configuration (https://github.com/Qitas/note/issues/158)
-    # false 是必要的设置 (https://github.com/Qitas/note/issues/158)
+    # false is a necessary configuration (https://github.com/Qitas/Note/issues/158)
+    # false 是必要的设置 (https://github.com/Qitas/Note/issues/158)
     noClasses = false
   # Goldmark is from Hugo 0.60 the default library used for Markdown
   # Goldmark 是 Hugo 0.60 以来的默认 Markdown 解析库

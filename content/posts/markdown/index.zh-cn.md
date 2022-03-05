@@ -1,12 +1,12 @@
 ---
 weight: 4
 title: "Markdown"
-date: 2022-01-01T21:57:40+08:00
-lastmod: 2022-02-01T16:45:40+08:00
+date: 2022-03-04T11:57:40+08:00
+lastmod: 2022-03-04T16:45:40+08:00
 draft: false
 author: "Qitas"
 authorLink: "https://www.qitas.cn"
-description: "这篇文章展示了基本的 Markdown语法和格式."
+description: "总结展示基本Markdown语法和格式."
 resources:
 - name: "featured-image"
   src: "featured-image.png"
@@ -17,21 +17,18 @@ categories: ["Markdown"]
 lightgallery: true
 ---
 
+## 简介
 
-事实上编写 Web内容很麻烦. [WYSIWYG]^(所见即所得) 编辑器帮助减轻了这一任务. 但通常会导致代码太糟, 或更糟糕的是, 网页也会很丑.
+Markdown 是一种轻量级标记语言，允许人们使用易读易写的纯文本格式编写文档，由约翰·格鲁伯（英语：John Gruber）在2004年创建，编写的文档可以导出HTML 、Word、图像、PDF、Epub 等多种格式的文档。
 
-没有通常伴随的所有复杂和丑陋的问题, **Markdown** 是一种更好的生成 **HTML** 内容的方式.
+ [WYSIWYG]^(所见即所得) 的编辑方式可以提供高效的文档撰写体验，各种强大的功能让 **Markdown** 可以用于生成 **HTML** 内容。
 
-一些主要好处是:
 
-1. Markdown 简单易学, 几乎没有多余的字符, 因此编写内容也更快.
-2. 用 Markdown 书写时出错的机会更少.
-3. 可以产生有效的 XHTML 输出.
-4. 将内容和视觉显示保持分开, 这样就不会打乱网站的外观.
-5. 可以在你喜欢的任何文本编辑器或 Markdown 应用程序中编写内容.
-6. Markdown 使用起来很有趣!
-
-John Gruber, Markdown 的作者如是说:
+1. 简单易学, 几乎没有多余的字符, 因此编写内容也更快
+2. 书写时出错的机会更少
+3. 可以产生有效的XHTML输出
+4. 将内容和视觉显示保持分开, 这样就不会打乱网站的外观
+5. 可以在你喜欢的任何文本编辑器或 Markdown 应用程序中编写内容
 
 > Markdown 格式的首要设计目标是更具可读性.
 > 最初的想法是 Markdown 格式的文档应当以纯文本形式发布,
@@ -40,6 +37,7 @@ John Gruber, Markdown 的作者如是说:
 > 但 Markdown 语法的最大灵感来源是纯文本电子邮件的格式.
 >
 > {{< style "text-align: right;" >}}-- _John Gruber_{{< /style >}}
+
 
 话不多说, 我们来回顾一下 Markdown 的主要语法以及生成的 HTML 样式!
 
@@ -129,7 +127,7 @@ soluta officiis concludaturque ei qui, vide sensibus vim ad.
 输出的 HTML 看起来像这样:
 
 ```html
-<p>Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.</p>
+<p>Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus.</p>
 ```
 
 可以使用一个空白行进行**换行**.

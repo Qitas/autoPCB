@@ -29,8 +29,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.QITAS_TOKEN }}
-          external_repository: Qitas/note
+          external_repository: Qitas/Note
           PUBLISH_BRANCH: gh-pages
           publish_dir: ./public
-          commit_message: Sync Docs
+          commit_message: Sync Note
 

@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Qitas/note.git"
+    "url": "git+https://github.com/Qitas/Note.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Qitas/note/issues"
+    "url": "https://github.com/Qitas/Note/issues"
   },
-  "homepage": "https://github.com/Qitas/note#readme",
+  "homepage": "https://github.com/Qitas/Note#readme",
   "description": "",
   "dependencies": {
     "gulp": "^4.0.2",
