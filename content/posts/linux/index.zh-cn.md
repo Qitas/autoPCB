@@ -176,6 +176,3 @@ ls xxx >out.txt 2>&1, 实际上可换成 ls xxx 1>out.txt 2>&1；重定向符号
 %steal列显示了在内存相对紧张的环境下pagein强制对不同的页面进行的steal操作 。
 %idle列显示了CPU处在空闲状态的时间百分比。
 ```
-
-
-
