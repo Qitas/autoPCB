@@ -9,7 +9,7 @@ theme = "LoveIt"
 
 # website title
 # 网站标题
-title = "工作笔记"
+title = "NoteBook"
 
 # whether to use robots.txt
 # 是否使用 robots.txt
@@ -328,7 +328,7 @@ enableEmoji = true
       logo = "https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png"
       # title name
       # 标题名称
-      name = "Know Espressif"
+      name = "NoteBook"
       # you can add extra information before the name (HTML format is supported), such as icons
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
       pre = ""
@@ -617,7 +617,7 @@ enableEmoji = true
   [params.typeit]
     # typing speed between each step (measured in milliseconds)
     # 每一步的打字速度 (单位是毫秒)
-    speed = 255
+    speed = 150
     # blinking speed of the cursor (measured in milliseconds)
     # 光标的闪烁速度 (单位是毫秒)
     cursorSpeed = 1000
