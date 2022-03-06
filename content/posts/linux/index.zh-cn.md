@@ -1,8 +1,8 @@
 ---
 weight: 4
 title: "Linux"
-date: 2022-03-06T11:57:40+08:00
-lastmod: 2022-03-06T12:45:40+08:00
+date: 2022-03-06T10:27:40+08:00
+lastmod: 2022-03-06T12:15:40+08:00
 draft: false
 author: "Qitas"
 authorLink: "https://www.qitas.cn"
