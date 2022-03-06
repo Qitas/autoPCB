@@ -89,6 +89,45 @@ qitas@ubuntu:/etc/apt$ vim sources.list
 
 ### 快捷操作
 
+
+* clear(完全清除，无法向上翻页查看之前信息)
+* ctrl+L（屏幕清除，开启新行，依旧可以向上翻页查看之前信息）
+* date 查看系统时间
+* cat 正常文件查看
+* tac 从最后一行开始显示
+* nl 显示是会输出行号
+* 可翻页查看(只向后)：more，按q停止
+* 可翻页查看(可向前或向后)：less，按q停止
+
+### 文件处理
+
+```
+改变所属用户chown（应该首先改）
+​ chown user text.txt
+改文件权限chmod
+​ chmod 770 test.txt
+​ chmod u+r test.txt
+​ chmod u=rw test.txt
+改文件所属组
+ chgrp user_grp text.txt
+```
+
+### 网络管理
+
+
+
+编辑网卡配置文件：sudo vi /etc/network/interfaces
+```
+auto eth0
+iface eth0 inet dhcp
+or
+auto eth0
+iface eth0 inet static
+address 192.168.3.90
+gateway 192.168.3.1
+netmask 255.255.255.0
+```
+
 ### 显示输出
 
 
@@ -97,23 +136,30 @@ qitas@ubuntu:/etc/apt$ vim sources.list
 把/dev/null 可以看作"黑洞". 它等价于一个只写文件. 所有写入它的内容都会永远丢失. 而尝试从它那儿读取内容则什么也读不到，偶尔也可以把 & 在命令的最后加上，表示让程序后台执行。
 
 ```ls
-
 ls 2>1 测试一下，不会报没有2文件的错误，但会输出一个空的文件1；
 ls xxx 2>1测试，没有xxx这个文件的错误输出到了1中；
 ls xxx 2>&1测试，不会生成1这个文件了，不过错误跑到标准输出了；
 ls xxx >out.txt 2>&1, 实际上可换成 ls xxx 1>out.txt 2>&1；重定向符号>默认是1,错误和输出都传到out.txt了。
-
 ```
 
 
 ### 状态查询
 
+
 常用系统命令包括 Vmstat、sar、iostat、netstat、free、ps、top等
 
-[sar](https://www.cnblogs.com/liyongsan/p/7459523.html)命令监控系统CPU
+* 查看活动用户：w
+* 查看用户登录日志：last
+* 查看用户信息：id
+* 查看本机ip: ip a
+* 查看路由表：ip route
+* 查看所有进程：ps -elf
+* 实时查看进程：top
+
+监控CPU状态[sar](https://www.cnblogs.com/liyongsan/p/7459523.html)
 
 {{< admonition tip >}}
-:(far fa-bookmark fa-fw): sar对系统每方面进行单独统计，但会增加系统开销，不过开销可以评估，对系统的统计结果不会有很大影响。
+:(far fa-bookmark fa-fw): sar对系统每方面进行单独统计，会增加系统开销，不过开销可以评估，对系统的统计结果影响不大。
 {{< /admonition >}}
 
 下面是sar命令对某个系统的CPU统计输出：
@@ -133,4 +179,3 @@ ls xxx >out.txt 2>&1, 实际上可换成 ls xxx 1>out.txt 2>&1；重定向符号
 
 
 
-### 文件处理
