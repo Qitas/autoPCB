@@ -19,12 +19,21 @@ lightgallery: true
 
 sensor（图像传感器）是一种半导体芯片，有两种类型：电荷耦合器件CCD（Charge Coupled Device） 和 互补金属氧化物半导体CMOS（Complementary Metal-Oxide Semiconductor）。
 
+* CCD传感器，电荷信号先传送，后放大，再A/D，成像质量灵敏度高、分辨率好、噪声小；处理速度慢；造价高，工艺复杂。
+* CMOS传感器，电荷信号先放大，后A/D，再传送；成像质量灵敏度低、噪声明显；处理速度快；造价低，工艺简单。
 
 {{< admonition tip >}}
-:(far fa-bookmark fa-fw): CCD传感器，电荷信号先传送，后放大，再A/D，成像质量灵敏度高、分辨率好、噪声小；处理速度慢；造价高，工艺复杂。CMOS传感器，电荷信号先放大，后A/D，再传送；成像质量灵敏度低、噪声明显；处理速度快；造价低，工艺简单。
+:(far fa-bookmark fa-fw): ISP（图像信号处理） 主要完成数字图像的处理工作，把 sensor 采集到的原始数据转换为显示支持的格式。
 {{< /admonition >}}
 
-ISP（图像信号处理） 主要完成数字图像的处理工作，把 sensor 采集到的原始数据转换为显示支持 的格式。
+### OV2640
+
+支持：RGB565或JPEG输出
+
+UKCA,即分辦率位1600*1200的输出格式。类似的还有：SXGA(1280*1024)、XVGA(1280*960)、WXGA(1280*800)、XGA(1024*768)、SVGA(800*600)、VGA(640ド480)、CIF(352*288)和 QQVGA(160*120)等。
+
+PCLK,即像素时钟,一个PCLK时钟,输出一个(或半个)像素。VSYNC,即帧同步信号。HREF/ HSYNC,即行同步信号。
+
 
 ## interface
 
