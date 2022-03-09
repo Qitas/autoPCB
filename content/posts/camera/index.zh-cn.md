@@ -23,7 +23,7 @@ sensor（图像传感器）是一种半导体芯片，有两种类型：电荷�
 * CMOS传感器，电荷信号先放大，后A/D，再传送；成像质量灵敏度低、噪声明显；处理速度快；造价低，工艺简单。
 
 {{< admonition tip >}}
-:(far fa-bookmark fa-fw): ISP（图像信号处理） 主要完成数字图像的处理工作，把 sensor 采集到的原始数据转换为显示支持的格式。
+:(far fa-bookmark fa-fw): ISP（图像信号处理） 主要完成数字图像的处理工作，把 sensor 采集到的原始数据转换为对应格式。
 {{< /admonition >}}
 
 ### OV2640
