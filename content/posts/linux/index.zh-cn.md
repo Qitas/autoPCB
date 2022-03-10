@@ -99,6 +99,31 @@ qitas@ubuntu:/etc/apt$ vim sources.list
 * 可翻页查看(只向后)：more，按q停止
 * 可翻页查看(可向前或向后)：less，按q停止
 
+
+### 用户管理
+
+* 查看当前的用户:
+sudo adduser db
+```
+ls -l /etc/passwd
+ls -l /etc/shadow
+ls -l /etc/group
+```
+
+```
+sudo adduser db
+passwd db
+```
+
+```
+sudo vim /etc/sudoers
+
+# User privilege specification
+root ALL=(ALL) ALL
+db ALL=(ALL) ALL
+```
+
+
 ### 文件处理
 
 ```
@@ -176,3 +201,25 @@ ls xxx >out.txt 2>&1, 实际上可换成 ls xxx 1>out.txt 2>&1；重定向符号
 %steal列显示了在内存相对紧张的环境下pagein强制对不同的页面进行的steal操作 。
 %idle列显示了CPU处在空闲状态的时间百分比。
 ```
+
+
+### VIM
+
+Vim 是从 vi 发展出来的一个文本编辑器。代码补全、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。
+
+基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。 
+
+用户刚刚启动 vi/vim，便进入了命令模式。此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。
+
+以下是常用的几个命令：
+
+* i 切换到输入模式，以输入字符。
+* x 删除当前光标所在处的字符。
+* : 切换到底线命令模式，以在最底一行输入命令。
+
+在命令模式下按下:（英文冒号）就进入了底线命令模式。底线命令模式可以输入单个或多个字符的命令，可用的命令非常多。在底线命令模式中，基本的命令有（已经省略了冒号）：
+
+* q 退出程序
+* w 保存文件
+
+按ESC键可随时退出底线命令模式。

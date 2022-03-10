@@ -22,3 +22,45 @@ VSCode（Visual Studio Code）是一款由微软开发且跨平台的免费源�
 VS Code 使用 Monaco Editor 作为其底层的代码编辑器。和 GitHub 的 Atom一样，Visual Studio Code 也基于 Electron 框架构建。
 
 VScode官网：https://code.visualstudio.com
+
+
+## code-server
+
+
+[github](https://github.com/coder/code-server)
+
+
+```Docker
+# This will start a code-server container and expose it at http://127.0.0.1:8080.
+# It will also mount your current directory into the container as `/home/coder/project`
+# and forward your UID/GID so that all file system operations occur as your user outside
+# the container.
+#
+# Your $HOME/.config is mounted at $HOME/.config within the container to ensure you can
+# easily access/modify your code-server config in $HOME/.config/code-server/config.json
+# outside the container.
+mkdir -p ~/.config
+docker run -it --name code-server -p 127.0.0.1:8080:8080 \
+  -v "$HOME/.config:/home/coder/.config" \
+  -v "$PWD:/home/coder/project" \
+  -u "$(id -u):$(id -g)" \
+  -e PASSWORD='登录密码' \
+  -e "DOCKER_USER=$USER" \
+  codercom/code-server:latest
+```
+
+code-server目前还不支持在线安装插件，不过它提供了.VSIX方式的安装
+
+```
+wget https://github.com/Microsoft/vscode-python/releases/download/2019.3.6558/ms-python-release.vsix
+```
+
+```Docker
+docker run -itd --name code-idf -p 172.16.0.6:8266:8080 \
+  -v "$PWD:/home/coder" \
+  -u "$(id -u):$(id -g)" \
+  -e PASSWORD='1234567' \
+  -e "DOCKER_USER=$USER" \
+  codercom/code-server:latest
+```
+
