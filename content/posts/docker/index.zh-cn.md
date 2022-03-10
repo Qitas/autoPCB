@@ -25,17 +25,24 @@ lightgallery: true
 docker run -it -v /test:/soft centos /bin/bash
 ```
 
+* -t：--tty，分配终端
+* -i：--interactive,交互式启动
+* -d：--detach，后台运行
+* -v：--volume,挂在数据卷
+* -e, --env list  设置env
+
 这样在容器启动后，容器内会自动创建/soft的目录。通过这种方式，我们可以明确一点，即-v参数中，冒号":"前面的目录是宿主机目录，后面的目录是容器内目录。
 
 ```
 docker run -it --privileged=true -v /test:/soft centos /bin/bash
 ```
 
-指定--privileged参数，解决“Permission denied”
+指定--privileged参数解决“Permission denied”
 
 
+## 容器
 
-## ESP-IDF
+### ESP-IDF
 
 https://hub.docker.com/r/espressif/idf
 
@@ -44,19 +51,13 @@ docker pull espressif/idf
 ```
 
 ```build
-docker run --rm --privileged -v $PWD:/project -w /project espressif/idf:v4.4 idf.py build
+sudo docker run --rm --privileged -v $PWD:/project -w /project espressif/idf:release-v4.4 idf.py build
+sudo docker run --rm --privileged -v /dev:/dev -v $PWD:/project -w /project espressif/idf:release-v4.4 idf.py fullclean build flash
+sudo docker run --rm --privileged -v /dev:/dev -v $PWD:/project -w /project espressif/idf:release-v4.4 idf.py set-target esp32s3 build flash
 ```
+* -w: 指定命令执行时，所在的路径
+* --rm：容器停止自动删除容器
 
-
-```alias
-alias esp-idf='docker run --rm -v $PWD:/project -w /project -it espressif bash -c'
-```
-
-```配置与编译
-cd ~/myproject/examples/hello-world
-esp-idf "idf.py menuconfig"
-esp-idf "idf.py build"
-```
 
 ```alias
 alias esp-idf='docker run --rm --privileged -v /dev:/dev -v $PWD:/project -w /project -it espressif/idf:v4.4 bash -c'
