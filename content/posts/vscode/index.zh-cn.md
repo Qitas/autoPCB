@@ -57,9 +57,9 @@ wget https://github.com/Microsoft/vscode-python/releases/download/2019.3.6558/ms
 
 ```Docker
 docker run -itd --name code-idf -p 172.16.0.6:8266:8080 \
-  -v "$PWD:/home/coder" \
+  -v "/home/code:/home/code" \
   -u "$(id -u):$(id -g)" \
-  -e PASSWORD='1234567' \
+  -e PASSWORD='12345678' \
   -e "DOCKER_USER=$USER" \
   codercom/code-server:latest
 ```
