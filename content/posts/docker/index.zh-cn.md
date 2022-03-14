@@ -65,7 +65,28 @@ alias esp-idf='docker run --rm --privileged -v /dev:/dev -v $PWD:/project -w /pr
 
 执行docker run命令带--rm命令选项，等价于在容器退出后，执行docker rm -v。--rm选项不能与-d同时使用，即只能自动清理foreground容器，不能自动清理detached容器，--rm选项也会清理容器的匿名data volumes。
 
-```fash
+```
 esp-idf "idf.py -p /dev/ttyUSB0 flash"
 esp-idf "idf.py -p /dev/ttyUSB0 monitor"
 ```
+
+### ESP-Update-Server
+
+https://github.com/fito-jaeuklee/ESP32_LOCAL_OTA_SERVER
+
+```
+docker run -tid -p 8000:8000 --name fw-server -v $PWD:/firmware sglahn/ota-server 
+```
+
+```
+url -X GET \
+  http://localhost:8000/firmware \
+    -H 'x-ESP8266-version: 1.0'
+```
+
+## 容器互访
+
+目前的容器间互访基本都是基于网络端口实现。
+
+docker run --link 可以用来链接2个容器，使得源容器（被链接的容器）和接收容器（主动去链接的容器）之间可以互相通信，并且接收容器可以获取源容器的一些数据，如源容器的环境变量。
+

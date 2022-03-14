@@ -56,11 +56,24 @@ wget https://github.com/Microsoft/vscode-python/releases/download/2019.3.6558/ms
 ```
 
 ```Docker
-docker run -itd --name code-idf -p 172.16.0.6:8266:8080 \
+docker run -itd --name coder-idf -p 172.16.0.6:8266:8080 \
   -v "/home/code:/home/code" \
   -u "$(id -u):$(id -g)" \
   -e PASSWORD='12345678' \
   -e "DOCKER_USER=$USER" \
+  --restart=always \
+  codercom/code-server:latest
+```
+
+
+```Docker
+sudo docker run -itd --name esp-idf-master -p 192.168.171.41:8266:8080 \
+  -v "$HOME/.config:/home/coder/.config" \
+  -v "$PWD:/home/coder/esp-idf" \
+  -u "$(id -u):$(id -g)" \
+  -e PASSWORD='12345678' \
+  -e "DOCKER_USER=$USER" \
+  --restart=always \
   codercom/code-server:latest
 ```
 
