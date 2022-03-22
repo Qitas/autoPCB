@@ -23,6 +23,13 @@ VS Code 使用 Monaco Editor 作为其底层的代码编辑器。和 GitHub 的 
 
 VScode官网：https://code.visualstudio.com
 
+## 功能
+
+### 快捷方式
+
+* 折叠所有区域代码的快捷： ctrl + k  ctrl + 0 ; 先按下 ctrl 和 K，再按下 ctrl 和 0;
+* 展开所有折叠区域代码的快捷：ctrl +k ctrl + J ; 先按下 ctrl 和 K，再按下 ctrl 和 J;
+
 
 ## code-server
 
