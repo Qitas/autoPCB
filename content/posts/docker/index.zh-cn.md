@@ -44,7 +44,13 @@ docker run -it --privileged=true -v /test:/soft centos /bin/bash
 
 ## 容器
 
+### gogs
 
+```
+sudo docker run -itd --name=gogs -p 10022:22 -p 10880:3000 -v /home/ubuntu/gogs:/data gogs/gogs
+```
+
+### gitea
 
 ## 互访
 
