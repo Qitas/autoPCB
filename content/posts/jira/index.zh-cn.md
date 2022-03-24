@@ -27,8 +27,6 @@ Jira是Atlassian公司出品的一款事务管理软件。无论是“需求”�
 [Screen视图](#Screen)
 
 
-
-
 ## Project
 
 在项目管理范畴内可以看作“项目”的，都是Jira中的项目。Project是Issue的容器。在创建项目时，JIRA会要求你指定“KEY”，这个KEY加上数字，就是Issue的唯一ID了。比如新建一个项目，KEY设置为WEB，那么项目下的第一条Issue就是WEB-1，第二条Issue是WEB-2，依此类推。

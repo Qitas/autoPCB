@@ -32,6 +32,13 @@ esptool.py read_flash 0x0 0x1000 dump.bin
 esptool.py erase_region 0x20000 0x4000
 ```
 
+```
+esptool.py merge_bin -o test.bin --flash_mode dio --flash_freq 80m --flash_size 2MB
+0x0 build/bootloader/bootloader.bin
+0x8000 build/partition_table/partition-table.bin
+0x10000 build/uart_test.bin
+
+```
 
 ## IDF
 

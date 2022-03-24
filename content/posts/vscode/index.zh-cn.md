@@ -84,3 +84,4 @@ sudo docker run -itd --name esp-idf-master -p 192.168.171.41:8266:8080 \
   codercom/code-server:latest
 ```
 
+192.168.171.41 是内网地址，最好是通过root用户运行，避免权限问题
