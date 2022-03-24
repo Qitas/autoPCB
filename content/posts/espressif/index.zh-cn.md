@@ -14,6 +14,24 @@ categories: ["espressif"]
 lightgallery: true
 ---
 
+## esptool
+
+[esptool](https://github.com/espressif/esptool) 是乐鑫提供的开源库工具，用于乐鑫芯片和 ROM Bootloader（一级 bootloader）通讯，从而实现：固件烧录，flash 擦除，flash 读取，读 MAC 地址，读 flash id ，elf 文件转 bin 等常用功能；flash 校验, 读取内存，载入 bin 到 RAM 执行，读内存，写内存，读 flash 状态，写 flash 状态，读 chip id，组装 bin等高级功能。
+
+
+```
+esptool.py read_mac
+esptool.py flash_id
+```
+通常设备有多个 MAC 地址，例如做 station 的 MAC 地址，做 softAP 时的 MAC 地址，这里读取的是 MAC 地址是 station 地址
+
+自动读取从 0x0 地址开始的 4KB 内容，保存到 dump.bin 文件
+
+```
+esptool.py read_flash 0x0 0x1000 dump.bin
+esptool.py erase_region 0x20000 0x4000
+```
+
 
 ## IDF
 
