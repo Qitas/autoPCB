@@ -8,14 +8,14 @@ author: "Qitas"
 authorLink: "https://www.qitas.cn"
 description: "这篇文章总结Camera相关知识."
 
-tags: ["Camera", "sensor", "DVP", "MIPI"]
-categories: ["sensor"]
+tags: ["Camera", "DVP", "USB"]
+categories: ["sensors"]
 
 lightgallery: true
 ---
 
 
-## sensor
+## 简介
 
 sensor（图像传感器）是一种半导体芯片，有两种类型：电荷耦合器件CCD（Charge Coupled Device） 和 互补金属氧化物半导体CMOS（Complementary Metal-Oxide Semiconductor）。
 

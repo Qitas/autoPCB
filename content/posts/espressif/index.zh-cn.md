@@ -59,6 +59,10 @@ git rebase --exec 'git diff-tree --no-commit-id --name-only -r HEAD | xargs dos2
 
 ```
 
+## 核心观点
+
+使用ESP系列芯片，和使用传统的MCU最大的差异在于核心思想，ESP的产品可以看作微型服务器，将互联网领域对server的一些应用同步到单片机上，这在很多的应用案例上都有体现，所以对开发者的跨领域知识要求比较高，而官方的开发框架和应用案例，更多是为了让跨度显得没那么大，因为既懂gcc又懂gulp的工程师太稀有。
+
 
 
 ## esptool

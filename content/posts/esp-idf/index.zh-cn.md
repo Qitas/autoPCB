@@ -15,10 +15,16 @@ lightgallery: true
 ---
 
 
-## IDF
+## 简介
 
 [ESP-IDF](https://www.espressif.com/zh-hans/products/sdks/esp-idf) 是乐鑫官方的物联网开发框架，适用于 ESP32、ESP32-S 和 ESP32-C 系列 SoC。它基于 C/C++ 语言提供了一个自给自足的 SDK，方便用户在这些平台上开发通用应用程序。
 
+相较于传统MCU厂商提供的SDK组件，IDF更接近开源模板，集成丰富的使用案例资源，尤其是广泛吸纳开源资源，是开发趋势的直观呈现，当然这一特性，对于最求底层稳定，上层差异化的应用开发者十分恼火。
+
+## API
+
+
+## 使用
 
 ### Docker-IDF
 
@@ -62,7 +68,3 @@ url -X GET \
     -H 'x-ESP8266-version: 1.0'
 ```
 
-
-## ADF
-
-[ESP-ADF](https://github.com/espressif/esp-adf)
