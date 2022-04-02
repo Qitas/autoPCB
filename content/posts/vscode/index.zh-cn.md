@@ -25,6 +25,9 @@ VScode官网：https://code.visualstudio.com
 
 ## 功能
 
+
+前段时间Github更新了一个重磅级功能，我们在Github上浏览任何一个仓库时，只需要点击键盘上的 . 这个键，就可以以该仓库的文件打开一个网页版的代码编辑器
+
 ### 快捷方式
 
 * 折叠所有区域代码的快捷： ctrl + k  ctrl + 0 ; 先按下 ctrl 和 K，再按下 ctrl 和 0;

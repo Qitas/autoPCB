@@ -22,9 +22,9 @@ lightgallery: true
 {{< /admonition >}}
 
 
- ```
+```
  git rebase -i  [startpoint]  [endpoint]
- git rebase -i HEAD~3 
+ git rebase -i HEAD~3
  git rebase -i 36224db
 ```
 
@@ -38,6 +38,18 @@ lightgallery: true
 
 将该指定的提交复制到对应分支
 
- ```
+```
 git rebase   [startpoint]   [endpoint]  --onto  [branchName]
 ```
+
+
+## prune
+
+```
+error: cannot lock ref ‘refs/remotes/origin/master’
+```
+发生这个情况的原因是本地的 reference 和云端的不一样时导致的，因此同步一下双方的 reference 即可。
+```
+git remote prune origin
+```
+可以清理远程的本地分支，但是不会动本地的开发分支。
