@@ -1,0 +1,249 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>vscode - WorkNote</title><meta name=Description content="这篇文章总结Vscode使用."><meta property="og:title" content="vscode">
+<meta property="og:description" content="这篇文章总结Vscode使用.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.qitas.cn/vscode/"><meta property="og:image" content="https://www.qitas.cn/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-03-05T11:57:40+08:00">
+<meta property="article:modified_time" content="2022-04-30T19:51:58+08:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://www.qitas.cn/logo.png">
+<meta name=twitter:title content="vscode">
+<meta name=twitter:description content="这篇文章总结Vscode使用.">
+<meta name=application-name content="QITAS">
+<meta name=apple-mobile-web-app-title content="QITAS"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://www.qitas.cn/vscode/><link rel=prev href=https://www.qitas.cn/markdown/><link rel=next href=https://www.qitas.cn/shell/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"vscode","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.qitas.cn\/vscode\/"},"image":[{"@type":"ImageObject","url":"https:\/\/www.qitas.cn\/images\/Apple-Devices-Preview.png","width":3200,"height":2048}],"genre":"posts","keywords":"vscode, editor","wordcount":661,"url":"https:\/\/www.qitas.cn\/vscode\/","datePublished":"2022-03-05T11:57:40+08:00","dateModified":"2022-04-30T19:51:58+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Qitas","logo":{"@type":"ImageObject","url":"https:\/\/www.qitas.cn\/images\/qitas.png","width":288,"height":288}},"author":{"@type":"Person","name":"Qitas"},"description":"这篇文章总结Vscode使用."}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=WorkNote><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNote</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/ title=笔记> 笔记 </a><a class=menu-item href=/tags/ title=标签> 标签 </a><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=/> 主页 </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select id=language-select-desktop onchange="location=this.value"><option value=/vscode/ selected>简体中文</option></select>
+</a><span class="menu-item search" id=search-desktop>
+<input type=text placeholder id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=WorkNote><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNote</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+</a>
+</div><a class=menu-item href=/posts/ title=笔记>笔记</a><a class=menu-item href=/tags/ title=标签>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/ title>主页</a><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a><a href=javascript:void(0); class=menu-item title>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select onchange="location=this.value"><option value=/vscode/ selected>简体中文</option></select>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title></h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">vscode</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://www.qitas.cn title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Qitas</a></span>&nbsp;<span class=post-category></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-03-05>2022-03-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span></span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#简介>简介</a></li>
+<li><a href=#功能>功能</a>
+<ul>
+<li><a href=#快捷方式>快捷方式</a></li>
+</ul>
+</li>
+<li><a href=#code-server>code-server</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h2 id=简介>简介</h2>
+<p>VSCode（Visual Studio Code）是一款由微软开发且跨平台的免费源代码编辑器。该软件支持语法高亮、代码自动补全（又称 IntelliSense）、代码重构、查看定义功能，并且内置了命令行工具和 Git 版本控制系统。用户可以更改主题和键盘快捷方式实现个性化设置，也可以通过内置的扩展程序商店安装扩展以拓展软件功能。</p>
+<p>VS Code 使用 Monaco Editor 作为其底层的代码编辑器。和 GitHub 的 Atom一样，Visual Studio Code 也基于 Electron 框架构建。</p>
+<p>VScode官网：https://code.visualstudio.com</p>
+<h2 id=功能>功能</h2>
+<p>前段时间Github更新了一个重磅级功能，我们在Github上浏览任何一个仓库时，只需要点击键盘上的 . 这个键，就可以以该仓库的文件打开一个网页版的代码编辑器</p>
+<h3 id=快捷方式>快捷方式</h3>
+<ul>
+<li>折叠所有区域代码的快捷： ctrl + k ctrl + 0 ; 先按下 ctrl 和 K，再按下 ctrl 和 0;</li>
+<li>展开所有折叠区域代码的快捷：ctrl +k ctrl + J ; 先按下 ctrl 和 K，再按下 ctrl 和 J;</li>
+</ul>
+<h2 id=code-server>code-server</h2>
+<p><a href=https://github.com/coder/code-server target=_blank rel="noopener noreffer">github</a></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-Docker data-lang=Docker><span class=c># This will start a code-server container and expose it at http://127.0.0.1:8080.</span><span class=err>
+</span><span class=err></span><span class=c># It will also mount your current directory into the container as `/home/coder/project`</span><span class=err>
+</span><span class=err></span><span class=c># and forward your UID/GID so that all file system operations occur as your user outside</span><span class=err>
+</span><span class=err></span><span class=c># the container.</span><span class=err>
+</span><span class=err></span><span class=c>#</span><span class=err>
+</span><span class=err></span><span class=c># Your $HOME/.config is mounted at $HOME/.config within the container to ensure you can</span><span class=err>
+</span><span class=err></span><span class=c># easily access/modify your code-server config in $HOME/.config/code-server/config.json</span><span class=err>
+</span><span class=err></span><span class=c># outside the container.</span><span class=err>
+</span><span class=err></span>mkdir -p ~/.config<span class=err>
+</span><span class=err></span>docker run -it --name code-server -p 127.0.0.1:8080:8080 <span class=se>\
+</span><span class=se></span>  -v <span class=s2>&#34;</span><span class=nv>$HOME</span><span class=s2>/.config:/home/coder/.config&#34;</span> <span class=se>\
+</span><span class=se></span>  -v <span class=s2>&#34;</span><span class=nv>$PWD</span><span class=s2>:/home/coder/project&#34;</span> <span class=se>\
+</span><span class=se></span>  -u <span class=s2>&#34;</span><span class=k>$(</span>id -u<span class=k>)</span><span class=s2>:</span><span class=k>$(</span>id -g<span class=k>)</span><span class=s2>&#34;</span> <span class=se>\
+</span><span class=se></span>  -e <span class=nv>PASSWORD</span><span class=o>=</span><span class=s1>&#39;登录密码&#39;</span> <span class=se>\
+</span><span class=se></span>  -e <span class=s2>&#34;DOCKER_USER=</span><span class=nv>$USER</span><span class=s2>&#34;</span> <span class=se>\
+</span><span class=se></span>  codercom/code-server:latest<span class=err>
+</span></code></pre></td></tr></table>
+</div>
+</div><p>code-server目前还不支持在线安装插件，不过它提供了.VSIX方式的安装</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>wget https://github.com/Microsoft/vscode-python/releases/download/2019.3.6558/ms-python-release.vsix
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-Docker data-lang=Docker>docker run -itd --name coder-idf -p 172.16.0.6:8266:8080 <span class=se>\
+</span><span class=se></span>  -v <span class=s2>&#34;/home/code:/home/code&#34;</span> <span class=se>\
+</span><span class=se></span>  -u <span class=s2>&#34;</span><span class=k>$(</span>id -u<span class=k>)</span><span class=s2>:</span><span class=k>$(</span>id -g<span class=k>)</span><span class=s2>&#34;</span> <span class=se>\
+</span><span class=se></span>  -e <span class=nv>PASSWORD</span><span class=o>=</span><span class=s1>&#39;12345678&#39;</span> <span class=se>\
+</span><span class=se></span>  -e <span class=s2>&#34;DOCKER_USER=</span><span class=nv>$USER</span><span class=s2>&#34;</span> <span class=se>\
+</span><span class=se></span>  --restart<span class=o>=</span>always <span class=se>\
+</span><span class=se></span>  codercom/code-server:latest<span class=err>
+</span></code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-Docker data-lang=Docker>sudo docker run -itd --name esp-idf-master -p 192.168.171.41:8266:8080 <span class=se>\
+</span><span class=se></span>  -v <span class=s2>&#34;</span><span class=nv>$HOME</span><span class=s2>/.config:/home/coder/.config&#34;</span> <span class=se>\
+</span><span class=se></span>  -v <span class=s2>&#34;</span><span class=nv>$PWD</span><span class=s2>:/home/coder/esp-idf&#34;</span> <span class=se>\
+</span><span class=se></span>  -u <span class=s2>&#34;</span><span class=k>$(</span>id -u<span class=k>)</span><span class=s2>:</span><span class=k>$(</span>id -g<span class=k>)</span><span class=s2>&#34;</span> <span class=se>\
+</span><span class=se></span>  -e <span class=nv>PASSWORD</span><span class=o>=</span><span class=s1>&#39;12345678&#39;</span> <span class=se>\
+</span><span class=se></span>  -e <span class=s2>&#34;DOCKER_USER=</span><span class=nv>$USER</span><span class=s2>&#34;</span> <span class=se>\
+</span><span class=se></span>  --restart<span class=o>=</span>always <span class=se>\
+</span><span class=se></span>  codercom/code-server:latest<span class=err>
+</span></code></pre></td></tr></table>
+</div>
+</div><p>192.168.171.41 是内网地址，最好是通过root用户运行，避免权限问题</p>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>&nbsp;<a class=git-hash href=https://github.com/Qitas/Note/commit/746ab7a4402bfbbafdc33415dfd8f451ddef4a33 target=_blank title="commit by qitas(qitas@qitas.cn) 746ab7a4402bfbbafdc33415dfd8f451ddef4a33: fix back">
+<i class="fas fa-hashtag fa-fw"></i>746ab7a</a></span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/vscode/index.md target=_blank></a>
+</span></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title=" Twitter" data-sharer=twitter data-url=https://www.qitas.cn/vscode/ data-title=vscode data-hashtags=vscode,editor><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title=" Facebook" data-sharer=facebook data-url=https://www.qitas.cn/vscode/ data-hashtag=vscode><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title=" Hacker News" data-sharer=hackernews data-url=https://www.qitas.cn/vscode/ data-title=vscode><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title=" Line" data-sharer=line data-url=https://www.qitas.cn/vscode/ data-title=vscode><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title=" 微博" data-sharer=weibo data-url=https://www.qitas.cn/vscode/ data-title=vscode><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/vscode/>vscode</a>,&nbsp;<a href=/tags/editor/>editor</a></section>
+</div>
+<div class=post-nav><a href=/markdown/ class=prev rel=prev title=Markdown><i class="fas fa-angle-left fa-fw"></i>Markdown</a>
+<a href=/shell/ class=next rel=next title=Shell>Shell<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>Qitas</a></span><span class=icp-splitter>&nbsp;|&nbsp;</span><br class=icp-br>
+<span class=icp><a href=https://beian.miit.gov.cn/>粤ICP备18011880号</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"",maxShownLines:10},comment:{},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},search:{algoliaAppID:"EO42BFKWB5",algoliaIndex:"hugoblogloveit",algoliaSearchKey:"d3ef25fc7cb90a144ea0139748e4cf6b",highlightTag:"em",maxResultLength:10,noResultsFound:"",snippetLength:50,type:"algolia"}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>

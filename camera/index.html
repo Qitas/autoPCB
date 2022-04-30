@@ -1,0 +1,186 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Camera - WorkNote</title><meta name=Description content="这篇文章总结Camera相关知识."><meta property="og:title" content="Camera">
+<meta property="og:description" content="这篇文章总结Camera相关知识.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.qitas.cn/camera/"><meta property="og:image" content="https://www.qitas.cn/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-03-06T18:17:40+08:00">
+<meta property="article:modified_time" content="2022-04-30T19:51:58+08:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://www.qitas.cn/logo.png">
+<meta name=twitter:title content="Camera">
+<meta name=twitter:description content="这篇文章总结Camera相关知识.">
+<meta name=application-name content="QITAS">
+<meta name=apple-mobile-web-app-title content="QITAS"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://www.qitas.cn/camera/><link rel=prev href=https://www.qitas.cn/linux/><link rel=next href=https://www.qitas.cn/git/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Camera","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.qitas.cn\/camera\/"},"image":[{"@type":"ImageObject","url":"https:\/\/www.qitas.cn\/images\/Apple-Devices-Preview.png","width":3200,"height":2048}],"genre":"posts","keywords":"Camera, DVP, USB","wordcount":1230,"url":"https:\/\/www.qitas.cn\/camera\/","datePublished":"2022-03-06T18:17:40+08:00","dateModified":"2022-04-30T19:51:58+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Qitas","logo":{"@type":"ImageObject","url":"https:\/\/www.qitas.cn\/images\/qitas.png","width":288,"height":288}},"author":{"@type":"Person","name":"Qitas"},"description":"这篇文章总结Camera相关知识."}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=WorkNote><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNote</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/ title=笔记> 笔记 </a><a class=menu-item href=/tags/ title=标签> 标签 </a><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=/> 主页 </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select id=language-select-desktop onchange="location=this.value"><option value=/camera/ selected>简体中文</option></select>
+</a><span class="menu-item search" id=search-desktop>
+<input type=text placeholder id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=WorkNote><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNote</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+</a>
+</div><a class=menu-item href=/posts/ title=笔记>笔记</a><a class=menu-item href=/tags/ title=标签>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/ title>主页</a><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a><a href=javascript:void(0); class=menu-item title>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select onchange="location=this.value"><option value=/camera/ selected>简体中文</option></select>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title></h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Camera</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://www.qitas.cn title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Qitas</a></span>&nbsp;<span class=post-category></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-03-06>2022-03-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span></span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#简介>简介</a>
+<ul>
+<li><a href=#ov2640>OV2640</a></li>
+</ul>
+</li>
+<li><a href=#interface>interface</a>
+<ul>
+<li><a href=#dvp>DVP</a></li>
+<li><a href=#mipi>MIPI</a></li>
+<li><a href=#csi>CSI</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h2 id=简介>简介</h2>
+<p>sensor（图像传感器）是一种半导体芯片，有两种类型：电荷耦合器件CCD（Charge Coupled Device） 和 互补金属氧化物半导体CMOS（Complementary Metal-Oxide Semiconductor）。</p>
+<ul>
+<li>CCD传感器，电荷信号先传送，后放大，再A/D，成像质量灵敏度高、分辨率好、噪声小；处理速度慢；造价高，工艺复杂。</li>
+<li>CMOS传感器，电荷信号先放大，后A/D，再传送；成像质量灵敏度低、噪声明显；处理速度快；造价低，工艺简单。</li>
+</ul>
+<div class="details admonition tip open">
+<div class="details-summary admonition-title">
+<i class="icon fas fa-lightbulb fa-fw"></i><i class="details-icon fas fa-angle-right fa-fw"></i>
+</div>
+<div class=details-content>
+<div class=admonition-content><i class="far fa-bookmark fa-fw"></i>&nbsp;ISP（图像信号处理） 主要完成数字图像的处理工作，把 sensor 采集到的原始数据转换为对应格式。</div>
+</div>
+</div>
+<h3 id=ov2640>OV2640</h3>
+<p>支持：RGB565或JPEG输出</p>
+<p>UKCA,即分辦率位1600<em>1200的输出格式。类似的还有：SXGA(1280</em>1024)、XVGA(1280<em>960)、WXGA(1280</em>800)、XGA(1024<em>768)、SVGA(800</em>600)、VGA(640ド480)、CIF(352<em>288)和 QQVGA(160</em>120)等。</p>
+<p>PCLK,即像素时钟,一个PCLK时钟,输出一个(或半个)像素。VSYNC,即帧同步信号。HREF/ HSYNC,即行同步信号。</p>
+<h2 id=interface>interface</h2>
+<ul>
+<li>USB（Universal Serial Bus）串行通用串行总线</li>
+<li>MIPI是移动行业处理器接口（Mobile Industry Processor Interface）</li>
+<li>DVP是数字视频端口（digital video port）的简称</li>
+<li>CSI是相机串行接口（CMOS Sensor Interface）的简称</li>
+</ul>
+<h3 id=dvp>DVP</h3>
+<p>DVP总线PCLK极限约在96M左右，而且走线长度不能过长，所有DVP最大速率最好控制在72M以下，PCB layout较容易画；MIPI总线速率lvds接口耦合，走线必须差分等长，并且需要保护，故对PCB走线以及阻抗控制要求高一点（一般来讲差分阻抗要求在85欧姆~125欧姆之间）。</p>
+<p>DVP是并口，需要PCLK、VSYNC、HSYNC、D[0：11]——可以是8/10/12bit数据，看ISP或baseband是否支持；</p>
+<p>MIPI是LVDS（Low Voltage Differential Signaling，低电压差分信号），低压差分串口。只需要要CLKP/N、DATAP/N——最大支持4-lane，一般2-lane可以搞定。</p>
+<p>MIPI接口比DVP的接口信号线少，由于是低压差分信号，产生的干扰小，抗干扰能力也强。</p>
+<p>最重要的是DVP接口在信号完整性方面受限制，速率也受限制。500W还可以勉强用DVP，800W及以上都采用MIPI接口。</p>
+<h3 id=mipi>MIPI</h3>
+<p>MIPI是差分串口传输，速度快，抗干扰。主流手机模组现在都是用MIPI传输，传输时使用4对差分信号传输图像数据和一对差分时钟信号；最初是为了减少LCD屏和主控芯片之间连线的数量而设计的，后来发展到高速了，支持高分辨率的显示屏，现在基本上都是MIPI接口。</p>
+<h3 id=csi>CSI</h3>
+<p>CSI-2接口规范是由MIPI(Mobile Industry Processor Interface)联盟组织于2005年发布的关于相机串行接口，它作为一种全新的相机设备和处理器之间的接口框架，给便携式、手机摄像头等相关产业提供了一种灵活且高速的设备接口。</p>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>&nbsp;<a class=git-hash href=https://github.com/Qitas/Note/commit/746ab7a4402bfbbafdc33415dfd8f451ddef4a33 target=_blank title="commit by qitas(qitas@qitas.cn) 746ab7a4402bfbbafdc33415dfd8f451ddef4a33: fix back">
+<i class="fas fa-hashtag fa-fw"></i>746ab7a</a></span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/camera/index.md target=_blank></a>
+</span></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title=" Twitter" data-sharer=twitter data-url=https://www.qitas.cn/camera/ data-title=Camera data-hashtags=Camera,DVP,USB><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title=" Facebook" data-sharer=facebook data-url=https://www.qitas.cn/camera/ data-hashtag=Camera><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title=" Hacker News" data-sharer=hackernews data-url=https://www.qitas.cn/camera/ data-title=Camera><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title=" Line" data-sharer=line data-url=https://www.qitas.cn/camera/ data-title=Camera><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title=" 微博" data-sharer=weibo data-url=https://www.qitas.cn/camera/ data-title=Camera><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/camera/>Camera</a>,&nbsp;<a href=/tags/dvp/>DVP</a>,&nbsp;<a href=/tags/usb/>USB</a></section>
+</div>
+<div class=post-nav><a href=/linux/ class=prev rel=prev title=Linux><i class="fas fa-angle-left fa-fw"></i>Linux</a>
+<a href=/git/ class=next rel=next title=Git>Git<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>Qitas</a></span><span class=icp-splitter>&nbsp;|&nbsp;</span><br class=icp-br>
+<span class=icp><a href=https://beian.miit.gov.cn/>粤ICP备18011880号</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"",maxShownLines:10},comment:{},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},search:{algoliaAppID:"EO42BFKWB5",algoliaIndex:"hugoblogloveit",algoliaSearchKey:"d3ef25fc7cb90a144ea0139748e4cf6b",highlightTag:"em",maxResultLength:10,noResultsFound:"",snippetLength:50,type:"algolia"}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>

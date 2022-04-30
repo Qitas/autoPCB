@@ -1,0 +1,430 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Linux - WorkNote</title><meta name=Description content="这篇文章总结了基本的Linux使用."><meta property="og:title" content="Linux">
+<meta property="og:description" content="这篇文章总结了基本的Linux使用.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.qitas.cn/linux/"><meta property="og:image" content="https://www.qitas.cn/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-03-06T10:27:40+08:00">
+<meta property="article:modified_time" content="2022-04-30T19:51:58+08:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://www.qitas.cn/logo.png">
+<meta name=twitter:title content="Linux">
+<meta name=twitter:description content="这篇文章总结了基本的Linux使用.">
+<meta name=application-name content="QITAS">
+<meta name=apple-mobile-web-app-title content="QITAS"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://www.qitas.cn/linux/><link rel=prev href=https://www.qitas.cn/shell/><link rel=next href=https://www.qitas.cn/camera/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Linux","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.qitas.cn\/linux\/"},"image":[{"@type":"ImageObject","url":"https:\/\/www.qitas.cn\/images\/Apple-Devices-Preview.png","width":3200,"height":2048}],"genre":"posts","keywords":"Linux, Ubuntu, Shell","wordcount":2565,"url":"https:\/\/www.qitas.cn\/linux\/","datePublished":"2022-03-06T10:27:40+08:00","dateModified":"2022-04-30T19:51:58+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Qitas","logo":{"@type":"ImageObject","url":"https:\/\/www.qitas.cn\/images\/qitas.png","width":288,"height":288}},"author":{"@type":"Person","name":"Qitas"},"description":"这篇文章总结了基本的Linux使用."}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=WorkNote><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNote</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/ title=笔记> 笔记 </a><a class=menu-item href=/tags/ title=标签> 标签 </a><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=/> 主页 </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select id=language-select-desktop onchange="location=this.value"><option value=/linux/ selected>简体中文</option></select>
+</a><span class="menu-item search" id=search-desktop>
+<input type=text placeholder id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=WorkNote><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNote</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+</a>
+</div><a class=menu-item href=/posts/ title=笔记>笔记</a><a class=menu-item href=/tags/ title=标签>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/ title>主页</a><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a><a href=javascript:void(0); class=menu-item title>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select onchange="location=this.value"><option value=/linux/ selected>简体中文</option></select>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title></h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Linux</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://www.qitas.cn title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Qitas</a></span>&nbsp;<span class=post-category></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-03-06>2022-03-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span></span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#系统简介>系统简介</a>
+<ul>
+<li><a href=#ubuntu>Ubuntu</a>
+<ul>
+<li><a href=#软件管理>软件管理</a></li>
+<li><a href=#配置软件安装源>配置软件安装源</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#技能补全>技能补全</a>
+<ul>
+<li><a href=#快捷操作>快捷操作</a></li>
+<li><a href=#用户管理>用户管理</a></li>
+<li><a href=#文件处理>文件处理</a></li>
+<li><a href=#网络管理>网络管理</a></li>
+<li><a href=#显示输出>显示输出</a></li>
+<li><a href=#状态查询>状态查询</a></li>
+<li><a href=#vim>VIM</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div><div class=content id=content><p><strong><ruby>Espressif<rt>乐鑫</rt></ruby></strong> 日常工作依赖于<strong><ruby>Linux<rt>Ubuntu</rt></ruby></strong> 开发环境，在此总常用的操作命令及快捷方式，便于判断知识边界和提高复习效率。</p>
+<h2 id=系统简介>系统简介</h2>
+<p>关于Linux的书籍和文章非常多，不同的应用目的常用的工具和指令是不同的，学习的重点可能会有些许差异，在此总结最通用的基础部分。</p>
+<p>Linux 只是一个内核。内核指的是一个提供设备驱动、文件系统、进程管理、网络通信等功能的系统软件，内核并不是一套完整的操作系统，它只是操作系统的核心。一些组织或厂商将 Linux 内核与各种软件和文档包装起来，并提供系统安装界面和系统配置、设定与管理工具，就构成了 Linux 的发行版本。</p>
+<p>Linux 的发行版本可以大体分为两类：</p>
+<ul>
+<li>商业公司维护的发行版本，以著名的 Red Hat 为代表；</li>
+<li>社区组织维护的发行版本，以 Debian 为代表。</li>
+</ul>
+<p>把 Red Hat、Ubuntu、SUSE 等直接说成 Linux 其实是不确切的，它们是 Linux 的发行版本，更确切地说，应该叫作“以Linux为核心的操作系统软件包”。</p>
+<h3 id=ubuntu>Ubuntu</h3>
+<p>Ubuntu 基于知名的 Debian Linux 发展而来，界面友好，容易上手，对硬件的支持非常全面，是目前最适合做桌面系统的 Linux 发行版本，而且 Ubuntu 的所有发行版本都免费提供。</p>
+<h4 id=软件管理>软件管理</h4>
+<p>系统默认包管理工具为 <strong>apt</strong></p>
+<p>apt-get命令是Debian Linux发行版中的APT软件包管理工具。所有基于Debian的发行都使用这个包管理系统。deb包可以把一个应用的文件包在一起，大体就如同Windows上的安装文件。
+我们常用的Ubuntu就是一个基于Debian的发行，我们使用apt-get命令获取这个列表，以下是我整理的常用命令：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=nx>update</span>  <span class=nx>更新源</span>
+<span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=nx>install</span> <span class=kn>package</span> <span class=nx>安装包</span>
+<span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=nx>remove</span> <span class=kn>package</span> <span class=nx>删除包</span>
+<span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>cache</span> <span class=nx>search</span> <span class=kn>package</span> <span class=nx>搜索软件包</span>
+<span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>cache</span> <span class=nx>show</span> <span class=kn>package</span>  <span class=nx>获取包的相关信息</span><span class=err>，</span><span class=nx>如说明</span><span class=err>、</span><span class=nx>大小</span><span class=err>、</span><span class=nx>版本等</span>
+<span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=nx>install</span> <span class=kn>package</span> <span class=o>--</span><span class=nx>reinstall</span>  <span class=nx>重新安装包</span>
+<span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=o>-</span><span class=nx>f</span> <span class=nx>install</span>  <span class=nx>修复安装</span>
+<span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=nx>remove</span> <span class=kn>package</span> <span class=o>--</span><span class=nx>purge</span> <span class=nx>删除包</span><span class=err>，</span><span class=nx>包括配置文件等</span>
+<span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=nx>build</span><span class=o>-</span><span class=nx>dep</span> <span class=kn>package</span> <span class=nx>安装相关的编译环境</span>
+<span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=nx>upgrade</span> <span class=nx>更新已安装的包</span>
+<span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=nx>dist</span><span class=o>-</span><span class=nx>upgrade</span> <span class=nx>升级系统</span>
+<span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>cache</span> <span class=nx>depends</span> <span class=kn>package</span> <span class=nx>了解使用该包依赖那些包</span>
+<span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>cache</span> <span class=nx>rdepends</span> <span class=kn>package</span> <span class=nx>查看该包被哪些包依赖</span>
+<span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=nx>source</span> <span class=kn>package</span>  <span class=nx>下载该包的源代码</span>
+<span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=nx>clean</span> <span class=o>&amp;&amp;</span> <span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=nx>autoclean</span> <span class=nx>清理无用的包</span>
+<span class=nx>sudo</span> <span class=nx>apt</span><span class=o>-</span><span class=nx>get</span> <span class=nx>check</span> <span class=nx>检查是否有损坏的依赖</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>apt-key命令用于管理Debian Linux系统中的软件包密钥。每个发布的deb包，都是通过密钥认证的，apt-key用来管理密钥。操作指令：APT密钥操作指令。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>apt-key list          #列出已保存在系统中key。
+apt-key add keyname   #把下载的key添加到本地trusted数据库中。
+apt-key del keyname   #从本地trusted数据库删除key。
+apt-key update        #更新本地trusted数据库，删除过期没用的key。
+
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=配置软件安装源>配置软件安装源</h4>
+<p>sources.list系统自带的，源是来Ubuntu的官网！安装包比较慢，所以最好切换成国内的</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>qitas@ubuntu:~$ cd /etc/apt
+qitas@ubuntu:/etc/apt$ sudo cp sources.list sources.list.bak
+qitas@ubuntu:/etc/apt$ vim sources.list
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=技能补全>技能补全</h2>
+<h3 id=快捷操作>快捷操作</h3>
+<ul>
+<li>clear(完全清除，无法向上翻页查看之前信息)</li>
+<li>ctrl+L（屏幕清除，开启新行，依旧可以向上翻页查看之前信息）</li>
+<li>date 查看系统时间</li>
+<li>cat 正常文件查看</li>
+<li>tac 从最后一行开始显示</li>
+<li>nl 显示是会输出行号</li>
+<li>可翻页查看(只向后)：more，按q停止</li>
+<li>可翻页查看(可向前或向后)：less，按q停止</li>
+</ul>
+<h3 id=用户管理>用户管理</h3>
+<ul>
+<li>查看当前的用户:
+sudo adduser db</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>ls -l /etc/passwd
+ls -l /etc/shadow
+ls -l /etc/group
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sudo adduser db
+passwd db
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sudo vim /etc/sudoers
+
+# User privilege specification
+root ALL=(ALL) ALL
+db ALL=(ALL) ALL
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=文件处理>文件处理</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>改变所属用户chown（应该首先改）
+​ chown user text.txt
+改文件权限chmod
+​ chmod 770 test.txt
+​ chmod u+r test.txt
+​ chmod u=rw test.txt
+改文件所属组
+ chgrp user_grp text.txt
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=网络管理>网络管理</h3>
+<p>编辑网卡配置文件：sudo vi /etc/network/interfaces</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>auto eth0
+iface eth0 inet dhcp
+or
+auto eth0
+iface eth0 inet static
+address 192.168.3.90
+gateway 192.168.3.1
+netmask 255.255.255.0
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=显示输出>显示输出</h3>
+<p>在使用shell语法时，对于& 1 更准确的说应该是文件描述符 1,而1标识标准输出，stdout。对于2 ，表示标准错误，stderr。
+2>&1 的意思就是将标准错误重定向到标准输出。这里标准输出已经重定向到了 /dev/null。那么标准错误也会输出到/dev/null
+把/dev/null 可以看作"黑洞". 它等价于一个只写文件. 所有写入它的内容都会永远丢失. 而尝试从它那儿读取内容则什么也读不到，偶尔也可以把 & 在命令的最后加上，表示让程序后台执行。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>ls 2&gt;1 测试一下，不会报没有2文件的错误，但会输出一个空的文件1；
+ls xxx 2&gt;1测试，没有xxx这个文件的错误输出到了1中；
+ls xxx 2&gt;&amp;1测试，不会生成1这个文件了，不过错误跑到标准输出了；
+ls xxx &gt;out.txt 2&gt;&amp;1, 实际上可换成 ls xxx 1&gt;out.txt 2&gt;&amp;1；重定向符号&gt;默认是1,错误和输出都传到out.txt了。
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=状态查询>状态查询</h3>
+<p>常用系统命令包括 Vmstat、sar、iostat、netstat、free、ps、top等</p>
+<ul>
+<li>查看活动用户：w</li>
+<li>查看用户登录日志：last</li>
+<li>查看用户信息：id</li>
+<li>查看本机ip: ip a</li>
+<li>查看路由表：ip route</li>
+<li>查看所有进程：ps -elf</li>
+<li>实时查看进程：top</li>
+</ul>
+<p>监控CPU状态<a href=https://www.cnblogs.com/liyongsan/p/7459523.html target=_blank rel="noopener noreffer">sar</a></p>
+<div class="details admonition tip open">
+<div class="details-summary admonition-title">
+<i class="icon fas fa-lightbulb fa-fw"></i><i class="details-icon fas fa-angle-right fa-fw"></i>
+</div>
+<div class=details-content>
+<div class=admonition-content><i class="far fa-bookmark fa-fw"></i>&nbsp;sar对系统每方面进行单独统计，会增加系统开销，不过开销可以评估，对系统的统计结果影响不大。</div>
+</div>
+</div>
+<p>下面是sar命令对某个系统的CPU统计输出：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>
+[root@webserver ~]# sar -u 3 5
+
+输出解释如下：
+%user列显示了用户进程消耗的CPU 时间百分比。
+%nice列显示了运行正常进程所消耗的CPU 时间百分比。
+%system列显示了系统进程消耗的CPU时间百分比。
+%iowait列显示了IO等待所占用的CPU时间百分比
+%steal列显示了在内存相对紧张的环境下pagein强制对不同的页面进行的steal操作 。
+%idle列显示了CPU处在空闲状态的时间百分比。
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=vim>VIM</h3>
+<p>Vim 是从 vi 发展出来的一个文本编辑器。代码补全、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。</p>
+<p>基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。</p>
+<p>用户刚刚启动 vi/vim，便进入了命令模式。此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。</p>
+<p>以下是常用的几个命令：</p>
+<ul>
+<li>i 切换到输入模式，以输入字符。</li>
+<li>x 删除当前光标所在处的字符。</li>
+<li>: 切换到底线命令模式，以在最底一行输入命令。</li>
+</ul>
+<p>在命令模式下按下:（英文冒号）就进入了底线命令模式。底线命令模式可以输入单个或多个字符的命令，可用的命令非常多。在底线命令模式中，基本的命令有（已经省略了冒号）：</p>
+<ul>
+<li>q 退出程序</li>
+<li>w 保存文件</li>
+</ul>
+<p>按ESC键可随时退出底线命令模式。</p>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>&nbsp;<a class=git-hash href=https://github.com/Qitas/Note/commit/746ab7a4402bfbbafdc33415dfd8f451ddef4a33 target=_blank title="commit by qitas(qitas@qitas.cn) 746ab7a4402bfbbafdc33415dfd8f451ddef4a33: fix back">
+<i class="fas fa-hashtag fa-fw"></i>746ab7a</a></span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/linux/index.md target=_blank></a>
+</span></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title=" Twitter" data-sharer=twitter data-url=https://www.qitas.cn/linux/ data-title=Linux data-hashtags=Linux,Ubuntu,Shell><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title=" Facebook" data-sharer=facebook data-url=https://www.qitas.cn/linux/ data-hashtag=Linux><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title=" Hacker News" data-sharer=hackernews data-url=https://www.qitas.cn/linux/ data-title=Linux><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title=" Line" data-sharer=line data-url=https://www.qitas.cn/linux/ data-title=Linux><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title=" 微博" data-sharer=weibo data-url=https://www.qitas.cn/linux/ data-title=Linux><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/linux/>Linux</a>,&nbsp;<a href=/tags/ubuntu/>Ubuntu</a>,&nbsp;<a href=/tags/shell/>Shell</a></section>
+</div>
+<div class=post-nav><a href=/shell/ class=prev rel=prev title=Shell><i class="fas fa-angle-left fa-fw"></i>Shell</a>
+<a href=/camera/ class=next rel=next title=Camera>Camera<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>Qitas</a></span><span class=icp-splitter>&nbsp;|&nbsp;</span><br class=icp-br>
+<span class=icp><a href=https://beian.miit.gov.cn/>粤ICP备18011880号</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"",maxShownLines:10},comment:{},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},search:{algoliaAppID:"EO42BFKWB5",algoliaIndex:"hugoblogloveit",algoliaSearchKey:"d3ef25fc7cb90a144ea0139748e4cf6b",highlightTag:"em",maxResultLength:10,noResultsFound:"",snippetLength:50,type:"algolia"}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>

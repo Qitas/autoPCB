@@ -1,0 +1,287 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>esp-idf - WorkNote</title><meta name=Description content="这篇文章简单介绍ESP-IDF."><meta property="og:title" content="esp-idf">
+<meta property="og:description" content="这篇文章简单介绍ESP-IDF.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.qitas.cn/esp-idf/"><meta property="og:image" content="https://www.qitas.cn/esp-idf/featured-image.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-04-30T11:57:40+08:00">
+<meta property="article:modified_time" content="2022-04-30T19:51:58+08:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://www.qitas.cn/esp-idf/featured-image.png">
+<meta name=twitter:title content="esp-idf">
+<meta name=twitter:description content="这篇文章简单介绍ESP-IDF.">
+<meta name=application-name content="QITAS">
+<meta name=apple-mobile-web-app-title content="QITAS"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://www.qitas.cn/esp-idf/><link rel=prev href=https://www.qitas.cn/wifi/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"esp-idf","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.qitas.cn\/esp-idf\/"},"image":[{"@type":"ImageObject","url":"https:\/\/www.qitas.cn\/esp-idf\/featured-image.png","width":1154,"height":379}],"genre":"posts","keywords":"esp-idf, api, espressif","wordcount":543,"url":"https:\/\/www.qitas.cn\/esp-idf\/","datePublished":"2022-04-30T11:57:40+08:00","dateModified":"2022-04-30T19:51:58+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Qitas","logo":{"@type":"ImageObject","url":"https:\/\/www.qitas.cn\/images\/qitas.png","width":288,"height":288}},"author":{"@type":"Person","name":"Qitas"},"description":"这篇文章简单介绍ESP-IDF."}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=WorkNote><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNote</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/ title=笔记> 笔记 </a><a class=menu-item href=/tags/ title=标签> 标签 </a><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=/> 主页 </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select id=language-select-desktop onchange="location=this.value"><option value=/esp-idf/ selected>简体中文</option></select>
+</a><span class="menu-item search" id=search-desktop>
+<input type=text placeholder id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=WorkNote><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNote</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+</a>
+</div><a class=menu-item href=/posts/ title=笔记>笔记</a><a class=menu-item href=/tags/ title=标签>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/ title>主页</a><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a><a href=javascript:void(0); class=menu-item title>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select onchange="location=this.value"><option value=/esp-idf/ selected>简体中文</option></select>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title></h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">esp-idf</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://www.qitas.cn title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Qitas</a></span>&nbsp;<span class=post-category></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-04-30>2022-04-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;&nbsp;</div>
+</div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=/esp-idf/featured-image.png data-srcset="/esp-idf/featured-image.png, /esp-idf/featured-image.png 1.5x, /esp-idf/featured-image.png 2x" data-sizes=auto alt=/esp-idf/featured-image.png title=这篇文章简单介绍ESP-IDF.></div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span></span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#system>System</a>
+<ul>
+<li><a href=#timer>timer</a></li>
+<li><a href=#sleep>sleep</a>
+<ul>
+<li><a href=#deep-sleep>Deep sleep</a></li>
+<li><a href=#light-sleep>Light sleep</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#wireless>Wireless</a>
+<ul>
+<li><a href=#wi-fi>Wi-Fi</a></li>
+<li><a href=#bluetooth>Bluetooth</a></li>
+</ul>
+</li>
+<li><a href=#protocols>Protocols</a></li>
+<li><a href=#peripheral>Peripheral</a>
+<ul>
+<li><a href=#adc>ADC</a></li>
+<li><a href=#pwm>PWM</a></li>
+<li><a href=#touch>Touch</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div><div class=content id=content><p><a href=https://docs.os-q.com/espidf target=_blank rel="noopener noreffer">esp-idf</a> 是乐鑫官方的物联网开发框架，适用于 ESP32、ESP32-S 和 ESP32-C 系列 SoC。它基于 C/C++ 语言提供了一个自给自足的 SDK，方便用户在这些平台上开发通用应用程序。</p>
+<p>相较于传统MCU厂商提供的SDK组件，IDF更接近开源模板，集成丰富的使用案例资源，尤其是广泛吸纳开源资源，是开发趋势的直观呈现，当然这一特性，对于最求底层稳定，上层差异化的应用开发者十分恼火。</p>
+<h2 id=system>System</h2>
+<h3 id=timer>timer</h3>
+<div class="details admonition tip open">
+<div class="details-summary admonition-title">
+<i class="icon fas fa-lightbulb fa-fw"></i><i class="details-icon fas fa-angle-right fa-fw"></i>
+</div>
+<div class=details-content>
+<div class=admonition-content><i class="far fa-bookmark fa-fw"></i>&nbsp;<a href=https://docs.espressif.com/projects/esp-idf/zh_CN/v4.4.1/esp32s3/api-reference/system/esp_timer.html target=_blank rel="noopener noreffer">64-bit hardware timer</a>相较于FreeRTOS软定时器具有更高精度。</div>
+</div>
+</div>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>#include &#34;esp_timer.h&#34;
+#include &#34;esp_timer_impl.h&#34;
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>typedef struct {
+    esp_timer_cb_t callback;        //!&lt; Function to call when timer expires
+    void* arg;                      //!&lt; Argument to pass to the callback
+    esp_timer_dispatch_t method;    //!&lt; Call the callback from task or from ISR
+    const char* name;               //!&lt; Timer name, used in esp_timer_dump function
+    bool skip_unhandled_events;     //!&lt; Skip unhandled events for periodic timers
+} esp_timer_create_args_t;
+</code></pre></td></tr></table>
+</div>
+</div><p>调用接口:</p>
+<ul>
+<li>esp_timer_init(void)</li>
+<li>esp_timer_create(const esp_timer_create_args_t *create_args, esp_timer_handle_t *out_handle)</li>
+<li>esp_timer_start_once(esp_timer_handle_t timer, uint64_t timeout_us)</li>
+<li>esp_timer_start_periodic(esp_timer_handle_t timer, uint64_t period)</li>
+<li>esp_timer_stop(esp_timer_handle_t timer)</li>
+<li>esp_timer_delete(esp_timer_handle_t timer)</li>
+</ul>
+<p>获取状态:</p>
+<ul>
+<li>esp_timer_dump(stdout);</li>
+<li>int64_t esp_timer_get_time(void);</li>
+<li>int64_t esp_timer_get_next_alarm(void);</li>
+<li>bool esp_timer_is_active(esp_timer_handle_t timer);</li>
+</ul>
+<h3 id=sleep>sleep</h3>
+<p>不同芯片的低功耗策略不同，针对<a href=https://docs.espressif.com/projects/esp-idf/zh_CN/v4.4.1/esp32s3/api-reference/system/sleep_modes.html target=_blank rel="noopener noreffer">ESP32-S3</a>而言，可以通过不同唤醒源退出。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>#include &#34;esp_sleep.h&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>唤醒源：</p>
+<ul>
+<li>Timer: esp_sleep_enable_timer_wakeup(uint64_t time_in_us)</li>
+<li>Touch : esp_sleep_enable_touchpad_wakeup()</li>
+<li>RTC GPIO : esp_sleep_enable_ext0_wakeup(gpio_num_tgpio_num, int level)</li>
+<li>RTC GPIO : esp_sleep_enable_ext1_wakeup(uint64_t mask, esp_sleep_ext1_wakeup_mode_t mode)</li>
+<li>ULP : esp_sleep_enable_gpio_wakeup(void)</li>
+</ul>
+<h4 id=deep-sleep>Deep sleep</h4>
+<p>一般而言，追求低功耗会优先考虑极低的可能，对应在ESP芯片上就是Deep Sleep模式</p>
+<h4 id=light-sleep>Light sleep</h4>
+<p>由于芯片时钟域的不同，在极低功耗的Deep Sleep模式下，很多功能是无法使用的，所以可以退而求其次，采用light sleep模式</p>
+<ul>
+<li>UART : esp_sleep_enable_uart_wakeup(int uart_num)</li>
+<li>GPIO : esp_sleep_enable_uart_wakeup(int uart_num)</li>
+</ul>
+<h2 id=wireless>Wireless</h2>
+<h3 id=wi-fi>Wi-Fi</h3>
+<h3 id=bluetooth>Bluetooth</h3>
+<h2 id=protocols>Protocols</h2>
+<h2 id=peripheral>Peripheral</h2>
+<h3 id=adc>ADC</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>#include &#34;driver/adc.h&#34;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=pwm>PWM</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>#include &#34;driver/mcpwm.h&#34;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=touch>Touch</h3>
+<div class="details admonition tip open">
+<div class="details-summary admonition-title">
+<i class="icon fas fa-lightbulb fa-fw"></i><i class="details-icon fas fa-angle-right fa-fw"></i>
+</div>
+<div class=details-content>
+<div class=admonition-content><i class="far fa-bookmark fa-fw"></i>&nbsp;<a href=https://docs.espressif.com/projects/esp-idf/zh_CN/v4.4.1/esp32s3/api-reference/peripherals/touch_pad.html target=_blank rel="noopener noreffer">ESP32-S3</a> 最多可支持 14 个电容式触摸传感器通道/GPIO。</div>
+</div>
+</div>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>#include &#34;driver/touch_pad.h&#34;
+</code></pre></td></tr></table>
+</div>
+</div></div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>&nbsp;<a class=git-hash href=https://github.com/Qitas/Note/commit/746ab7a4402bfbbafdc33415dfd8f451ddef4a33 target=_blank title="commit by qitas(qitas@qitas.cn) 746ab7a4402bfbbafdc33415dfd8f451ddef4a33: fix back">
+<i class="fas fa-hashtag fa-fw"></i>746ab7a</a></span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/esp-idf/index.md target=_blank></a>
+</span></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title=" Twitter" data-sharer=twitter data-url=https://www.qitas.cn/esp-idf/ data-title=esp-idf data-hashtags=esp-idf,api,espressif><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title=" Facebook" data-sharer=facebook data-url=https://www.qitas.cn/esp-idf/ data-hashtag=esp-idf><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title=" Hacker News" data-sharer=hackernews data-url=https://www.qitas.cn/esp-idf/ data-title=esp-idf><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title=" Line" data-sharer=line data-url=https://www.qitas.cn/esp-idf/ data-title=esp-idf><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title=" 微博" data-sharer=weibo data-url=https://www.qitas.cn/esp-idf/ data-title=esp-idf><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/esp-idf/>esp-idf</a>,&nbsp;<a href=/tags/api/>api</a>,&nbsp;<a href=/tags/espressif/>espressif</a></section>
+</div>
+<div class=post-nav><a href=/wifi/ class=prev rel=prev title=Wi-Fi><i class="fas fa-angle-left fa-fw"></i>Wi-Fi</a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>Qitas</a></span><span class=icp-splitter>&nbsp;|&nbsp;</span><br class=icp-br>
+<span class=icp><a href=https://beian.miit.gov.cn/>粤ICP备18011880号</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"",maxShownLines:10},comment:{},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},search:{algoliaAppID:"EO42BFKWB5",algoliaIndex:"hugoblogloveit",algoliaSearchKey:"d3ef25fc7cb90a144ea0139748e4cf6b",highlightTag:"em",maxResultLength:10,noResultsFound:"",snippetLength:50,type:"algolia"}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>

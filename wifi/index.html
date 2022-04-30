@@ -1,0 +1,157 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Wi-Fi - WorkNote</title><meta name=Description content="这篇文章总结WiFi."><meta property="og:title" content="Wi-Fi">
+<meta property="og:description" content="这篇文章总结WiFi.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.qitas.cn/wifi/"><meta property="og:image" content="https://www.qitas.cn/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-03-28T11:50:40+08:00">
+<meta property="article:modified_time" content="2022-04-30T19:51:58+08:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://www.qitas.cn/logo.png">
+<meta name=twitter:title content="Wi-Fi">
+<meta name=twitter:description content="这篇文章总结WiFi.">
+<meta name=application-name content="QITAS">
+<meta name=apple-mobile-web-app-title content="QITAS"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://www.qitas.cn/wifi/><link rel=prev href=https://www.qitas.cn/ota/><link rel=next href=https://www.qitas.cn/esp-idf/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Wi-Fi","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.qitas.cn\/wifi\/"},"image":[{"@type":"ImageObject","url":"https:\/\/www.qitas.cn\/images\/Apple-Devices-Preview.png","width":3200,"height":2048}],"genre":"posts","keywords":"Wi-Fi, espressif","wordcount":1180,"url":"https:\/\/www.qitas.cn\/wifi\/","datePublished":"2022-03-28T11:50:40+08:00","dateModified":"2022-04-30T19:51:58+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Qitas","logo":{"@type":"ImageObject","url":"https:\/\/www.qitas.cn\/images\/qitas.png","width":288,"height":288}},"author":{"@type":"Person","name":"Qitas"},"description":"这篇文章总结WiFi."}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=WorkNote><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNote</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/ title=笔记> 笔记 </a><a class=menu-item href=/tags/ title=标签> 标签 </a><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=/> 主页 </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select id=language-select-desktop onchange="location=this.value"><option value=/wifi/ selected>简体中文</option></select>
+</a><span class="menu-item search" id=search-desktop>
+<input type=text placeholder id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=WorkNote><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNote</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+</a>
+</div><a class=menu-item href=/posts/ title=笔记>笔记</a><a class=menu-item href=/tags/ title=标签>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/ title>主页</a><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a><a href=javascript:void(0); class=menu-item title>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select onchange="location=this.value"><option value=/wifi/ selected>简体中文</option></select>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title></h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Wi-Fi</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://www.qitas.cn title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Qitas</a></span>&nbsp;<span class=post-category></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-03-28>2022-03-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span></span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#beacon>Beacon</a></li>
+<li><a href=#dtim>DTIM</a></li>
+<li><a href=#multicast>Multicast</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h2 id=beacon>Beacon</h2>
+<p>Beacon-Interval(信标间隔)，这个值变大，有助于client端省电。这个值变小，有助于提高client端连接速度。降低了基地台的buffer frame负载。一般预设为100mS。以Beacons 封包发送SSID的速率是1Mbit/S.</p>
+<p>Listen-Interval(STA接收Beacon的周期)，AP广播Beacon的周期为Beacon-Interval，STA可以自由选择Beacon-Interval整数倍作为自己的Listen-Interval，比如10。</p>
+<p>STA每隔Listen-Interval接收Beacon并解码其中的TIM，如果TIM 指示没有数据缓存，STA 就可以立刻转入Doze状态，如果TIM 指示其有数据缓存，STA 就要向AP 发一个竞选控制包Poll，AP 在收到Poll 后就可以向该Poll 的源STA 发送一个为它缓存的数据包。</p>
+<h2 id=dtim>DTIM</h2>
+<p>每一个Beacon的帧中都有一个TIM(traffic indication message)信息元素，它主要用来由AP通告它管辖下的哪个STA有信息现在缓存在AP中，而在TIM中包含一个 Bitmap control 字段，它最大是251个字节，每一位映射一个STA，当为1时表示该位对应的STA有信息在AP中。</p>
+<p>STA收到与自己关联的TIM就要发送PS-POLL帧来与AP取来联系并取得它的缓存帧，标准的TIM中仅仅指示AP缓存的单播信息。</p>
+<p>DTIM(Delivery Traffic Indication Message)是TIM的特殊情况，当发送几个TIM之后，就要发送一个DTIM，其除了缓存单播信息，也同时指示AP缓存的组播或广播信息，一旦AP发送了DTIM, STA就必须处于清醒，因为广播或组播无重发机制，不醒来数据就收不到了。</p>
+<p>DTIM用于AP传统节电模式中，多点的应用，即由AP通过设置DTIM的间隔（缺省是一个beacon时间，100ms），根据这个间隔发送组播流量。</p>
+<p>也就是说DTIM里面会指示是否有组播数据，也会指示是否有单播数据。</p>
+<p>如果beacon包含的DTIM里面有组播数据，也包含了单播的数据。STA会马上唤醒，接受组播数据，接受完成之后，会继续接收单播数据。</p>
+<h2 id=multicast>Multicast</h2>
+<p>根据协议，Broadcast 和 Multicast(组播) 在DTIM的时候AP会发送给STA。DTIM在AP中的设置一般是一倍的TIM。</p>
+<p>当DTIM增加的时候会更加省电，因为出于PS模式下的STA醒来的次数变少了，但是这也会导致某些应用的延时加大。</p>
+<p>在以太网数据帧头中会需要指定发送以及接受设备的MAC地址，以确定该数据包的来源与去向，广播时接收方的MAC地址为0xFFFFFFFFFFFF，单播时接收方的MAC地址为对端MAC地址，而组播时，接收方的MAC地址则与组地址之间有一个映射关系，而WiFi组播配网正是利用了这个组地址与MAC地址的映射。判断一个MAC是否为组播MAC的依据是MAC地址的第一个字节的bit0是否为１。</p>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>&nbsp;<a class=git-hash href=https://github.com/Qitas/Note/commit/746ab7a4402bfbbafdc33415dfd8f451ddef4a33 target=_blank title="commit by qitas(qitas@qitas.cn) 746ab7a4402bfbbafdc33415dfd8f451ddef4a33: fix back">
+<i class="fas fa-hashtag fa-fw"></i>746ab7a</a></span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/wifi/index.md target=_blank></a>
+</span></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title=" Twitter" data-sharer=twitter data-url=https://www.qitas.cn/wifi/ data-title=Wi-Fi data-hashtags=Wi-Fi,espressif><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title=" Facebook" data-sharer=facebook data-url=https://www.qitas.cn/wifi/ data-hashtag=Wi-Fi><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title=" Hacker News" data-sharer=hackernews data-url=https://www.qitas.cn/wifi/ data-title=Wi-Fi><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title=" Line" data-sharer=line data-url=https://www.qitas.cn/wifi/ data-title=Wi-Fi><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title=" 微博" data-sharer=weibo data-url=https://www.qitas.cn/wifi/ data-title=Wi-Fi><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/wi-fi/>Wi-Fi</a>,&nbsp;<a href=/tags/espressif/>espressif</a></section>
+</div>
+<div class=post-nav><a href=/ota/ class=prev rel=prev title=OTA><i class="fas fa-angle-left fa-fw"></i>OTA</a>
+<a href=/esp-idf/ class=next rel=next title=esp-idf>esp-idf<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>Qitas</a></span><span class=icp-splitter>&nbsp;|&nbsp;</span><br class=icp-br>
+<span class=icp><a href=https://beian.miit.gov.cn/>粤ICP备18011880号</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"",maxShownLines:10},comment:{},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},search:{algoliaAppID:"EO42BFKWB5",algoliaIndex:"hugoblogloveit",algoliaSearchKey:"d3ef25fc7cb90a144ea0139748e4cf6b",highlightTag:"em",maxResultLength:10,noResultsFound:"",snippetLength:50,type:"algolia"}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>
