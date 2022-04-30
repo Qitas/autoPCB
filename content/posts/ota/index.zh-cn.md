@@ -8,16 +8,13 @@ author: "Qitas"
 authorLink: "https://www.qitas.cn"
 description: "这篇文章总结OTA."
 
-tags: ["OTA", "espressif"]
+tags: ["ota", "espressif"]
 categories: ["espressif"]
 
 lightgallery: true
 ---
 
-
-## OTA简介
-
-[OTA](https://www.espressif.com/zh-hans/products/sdks/esp-idf) (Over-the-Air)
+[OTA](https://www.espressif.com/zh-hans/products/sdks/esp-idf) (Over-the-Air) 通过无线方式实现固件升级
 
 ## ESP OTA
 

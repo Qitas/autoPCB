@@ -1,6 +1,6 @@
 ---
 weight: 4
-title: "esp-idf"
+title: "ESP-IDF"
 date: 2022-04-30T11:57:40+08:00
 lastmod: 2022-04-30T12:45:40+08:00
 draft: false

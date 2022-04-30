@@ -11,7 +11,7 @@ resources:
 - name: "featured-image"
   src: "featured-image.png"
 
-tags: ["Markdown", "HTML"]
+tags: ["markdown"]
 categories: ["editor"]
 
 lightgallery: true
