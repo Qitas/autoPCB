@@ -46,13 +46,13 @@ git rebase --exec 'git diff-tree --no-commit-id --name-only -r HEAD | xargs dos2
 
 ```
 
-## 核心观点
+## 开发环境
 
 使用ESP系列芯片，和使用传统的MCU最大的差异在于核心思想，ESP的产品可以看作微型服务器，将互联网领域对server的一些应用同步到单片机上，这在很多的应用案例上都有体现，所以对开发者的跨领域知识要求比较高，而官方的开发框架和应用案例，更多是为了让跨度显得没那么大，因为既懂gcc又懂gulp的工程师太稀有。
 
+### 固件烧录
 
-
-## esptool
+#### esptool
 
 [esptool](https://github.com/espressif/esptool) 是乐鑫提供的开源库工具，用于乐鑫芯片和 ROM Bootloader（一级 bootloader）通讯，从而实现：固件烧录，flash 擦除，flash 读取，读 MAC 地址，读 flash id ，elf 文件转 bin 等常用功能；flash 校验, 读取内存，载入 bin 到 RAM 执行，读内存，写内存，读 flash 状态，写 flash 状态，读 chip id，组装 bin等高级功能。
 
@@ -82,12 +82,9 @@ esptool.py --chip esp32c3 merge_bin -o test_flash_c3.bin 0x0 build/bootloader/bo
 
 
 
-## ADF
-
-[ESP-ADF](https://github.com/espressif/esp-adf)
 
 
-## esp-idf
+## ESP-IDF
 
 
 ### Docker
@@ -131,4 +128,9 @@ url -X GET \
     -H 'x-ESP8266-version: 1.0'
 ```
 
+## ESP-ADF
+
+[ESP-ADF](https://github.com/espressif/esp-adf)
+
+## ESP-MDF
 

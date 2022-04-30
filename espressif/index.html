@@ -4,12 +4,12 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Espressif - WorkNote</title><meta name=Description content="这篇文章总结Espressif编程开发."><meta property="og:title" content="Espressif">
+<title>Espressif - WorkNotes</title><meta name=Description content="这篇文章总结Espressif编程开发."><meta property="og:title" content="Espressif">
 <meta property="og:description" content="这篇文章总结Espressif编程开发.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.qitas.cn/espressif/"><meta property="og:image" content="https://www.qitas.cn/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-03-15T11:57:40+08:00">
-<meta property="article:modified_time" content="2022-04-30T19:51:58+08:00">
+<meta property="article:modified_time" content="2022-04-30T20:07:16+08:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://www.qitas.cn/logo.png">
 <meta name=twitter:title content="Espressif">
@@ -17,12 +17,12 @@
 <meta name=application-name content="QITAS">
 <meta name=apple-mobile-web-app-title content="QITAS"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://www.qitas.cn/espressif/><link rel=prev href=https://www.qitas.cn/docker/><link rel=next href=https://www.qitas.cn/jira/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Espressif","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.qitas.cn\/espressif\/"},"image":[{"@type":"ImageObject","url":"https:\/\/www.qitas.cn\/images\/Apple-Devices-Preview.png","width":3200,"height":2048}],"genre":"posts","keywords":"tools, espressif","wordcount":1546,"url":"https:\/\/www.qitas.cn\/espressif\/","datePublished":"2022-03-15T11:57:40+08:00","dateModified":"2022-04-30T19:51:58+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Qitas","logo":{"@type":"ImageObject","url":"https:\/\/www.qitas.cn\/images\/qitas.png","width":288,"height":288}},"author":{"@type":"Person","name":"Qitas"},"description":"这篇文章总结Espressif编程开发."}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://www.qitas.cn/espressif/><link rel=prev href=https://www.qitas.cn/docker/><link rel=next href=https://www.qitas.cn/jira/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Espressif","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.qitas.cn\/espressif\/"},"image":[{"@type":"ImageObject","url":"https:\/\/www.qitas.cn\/images\/Apple-Devices-Preview.png","width":3200,"height":2048}],"genre":"posts","keywords":"tools, espressif","wordcount":1551,"url":"https:\/\/www.qitas.cn\/espressif\/","datePublished":"2022-03-15T11:57:40+08:00","dateModified":"2022-04-30T20:07:16+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Qitas","logo":{"@type":"ImageObject","url":"https:\/\/www.qitas.cn\/images\/qitas.png","width":288,"height":288}},"author":{"@type":"Person","name":"Qitas"},"description":"这篇文章总结Espressif编程开发."}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title=WorkNote><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNote</a>
+<a href=/ title=WorkNotes><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNotes</a>
 </div>
 <div class=menu>
 <div class=menu-inner><a class=menu-item href=/posts/ title=笔记> 笔记 </a><a class=menu-item href=/tags/ title=标签> 标签 </a><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=/> 主页 </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title>简体中文<i class="fas fa-chevron-right fa-fw"></i>
@@ -48,7 +48,7 @@
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title=WorkNote><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNote</a>
+<a href=/ title=WorkNotes><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNotes</a>
 </div>
 <div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
@@ -98,14 +98,22 @@
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
 <li><a href=#编程规范>编程规范</a></li>
-<li><a href=#核心观点>核心观点</a></li>
+<li><a href=#开发环境>开发环境</a>
+<ul>
+<li><a href=#固件烧录>固件烧录</a>
+<ul>
 <li><a href=#esptool>esptool</a></li>
-<li><a href=#adf>ADF</a></li>
-<li><a href=#esp-idf>esp-idf</a>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#esp-idf>ESP-IDF</a>
 <ul>
 <li><a href=#docker>Docker</a></li>
 </ul>
 </li>
+<li><a href=#esp-adf>ESP-ADF</a></li>
+<li><a href=#esp-mdf>ESP-MDF</a></li>
 </ul>
 </nav></div>
 </div><div class=content id=content><h2 id=编程规范>编程规范</h2>
@@ -188,9 +196,10 @@ git rebase --exec &#39;git diff-tree --no-commit-id --name-only -r HEAD | xargs 
 
 </code></pre></td></tr></table>
 </div>
-</div><h2 id=核心观点>核心观点</h2>
+</div><h2 id=开发环境>开发环境</h2>
 <p>使用ESP系列芯片，和使用传统的MCU最大的差异在于核心思想，ESP的产品可以看作微型服务器，将互联网领域对server的一些应用同步到单片机上，这在很多的应用案例上都有体现，所以对开发者的跨领域知识要求比较高，而官方的开发框架和应用案例，更多是为了让跨度显得没那么大，因为既懂gcc又懂gulp的工程师太稀有。</p>
-<h2 id=esptool>esptool</h2>
+<h3 id=固件烧录>固件烧录</h3>
+<h4 id=esptool>esptool</h4>
 <p><a href=https://github.com/espressif/esptool target=_blank rel="noopener noreffer">esptool</a> 是乐鑫提供的开源库工具，用于乐鑫芯片和 ROM Bootloader（一级 bootloader）通讯，从而实现：固件烧录，flash 擦除，flash 读取，读 MAC 地址，读 flash id ，elf 文件转 bin 等常用功能；flash 校验, 读取内存，载入 bin 到 RAM 执行，读内存，写内存，读 flash 状态，写 flash 状态，读 chip id，组装 bin等高级功能。</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
@@ -231,9 +240,7 @@ esptool.py erase_region 0x20000 0x4000
 <pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>esptool.py --chip esp32c3 merge_bin -o test_flash_c3.bin 0x0 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/uart_test.bin
 </code></pre></td></tr></table>
 </div>
-</div><h2 id=adf>ADF</h2>
-<p><a href=https://github.com/espressif/esp-adf target=_blank rel="noopener noreffer">ESP-ADF</a></p>
-<h2 id=esp-idf>esp-idf</h2>
+</div><h2 id=esp-idf>ESP-IDF</h2>
 <h3 id=docker>Docker</h3>
 <p><a href=https://hub.docker.com/r/espressif/idf target=_blank rel="noopener noreffer">https://hub.docker.com/r/espressif/idf</a></p>
 <div class=highlight><div class=chroma>
@@ -300,12 +307,15 @@ esp-idf &#34;idf.py -p /dev/ttyUSB0 monitor&#34;
     -H &#39;x-ESP8266-version: 1.0&#39;
 </code></pre></td></tr></table>
 </div>
-</div></div><div class=post-footer id=post-footer>
+</div><h2 id=esp-adf>ESP-ADF</h2>
+<p><a href=https://github.com/espressif/esp-adf target=_blank rel="noopener noreffer">ESP-ADF</a></p>
+<h2 id=esp-mdf>ESP-MDF</h2>
+</div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>&nbsp;<a class=git-hash href=https://github.com/Qitas/Note/commit/746ab7a4402bfbbafdc33415dfd8f451ddef4a33 target=_blank title="commit by qitas(qitas@qitas.cn) 746ab7a4402bfbbafdc33415dfd8f451ddef4a33: fix back">
-<i class="fas fa-hashtag fa-fw"></i>746ab7a</a></span>
+<span>&nbsp;<a class=git-hash href=https://github.com/Qitas/Note/commit/eaa467d970e54077472d85d3b282c8c019fcb836 target=_blank title="commit by qitas(qitas@qitas.cn) eaa467d970e54077472d85d3b282c8c019fcb836: update">
+<i class="fas fa-hashtag fa-fw"></i>eaa467d</a></span>
 </div>
 <div class=post-info-license></div>
 </div>

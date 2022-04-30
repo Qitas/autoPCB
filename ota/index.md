@@ -1,10 +1,7 @@
 # OTA
 
 
-
-## OTA简介
-
-[OTA](https://www.espressif.com/zh-hans/products/sdks/esp-idf) (Over-the-Air)
+[OTA](https://www.espressif.com/zh-hans/products/sdks/esp-idf) (Over-the-Air) 通过无线方式实现固件升级
 
 ## ESP OTA
 
