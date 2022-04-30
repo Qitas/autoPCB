@@ -40,13 +40,13 @@ enableEmoji = true
     # 菜单配置
     [languages.zh-cn.menu]
       [[languages.zh-cn.menu.main]]
-        identifier = "notes"
+        identifier = "posts"
         # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
         pre = ""
         # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
         post = ""
         name = "笔记"
-        url = "/notes/"
+        url = "/posts/"
         title = "笔记"
         weight = 1
       [[languages.zh-cn.menu.main]]
@@ -156,7 +156,7 @@ enableEmoji = true
     languageName = "English"
     # whether to include Chinese/Japanese/Korean
     hasCJKLanguage = false
-    # default amount of notes in each pages
+    # default amount of posts in each pages
     paginate = 12
     # [UA-XXXXXXXX-X] google analytics code
     googleAnalytics = ""
@@ -165,13 +165,13 @@ enableEmoji = true
     # Menu config
     [languages.en.menu]
       [[languages.en.menu.main]]
-        identifier = "notes"
+        identifier = "posts"
         # you can add extra information before the name (HTML format is supported), such as icons
         pre = ""
         # you can add extra information after the name (HTML format is supported), such as icons
         post = ""
-        name = "Notes"
-        url = "/notes/"
+        name = "Posts"
+        url = "/posts/"
         # title will be shown when you hover on this menu link.
         title = ""
         weight = 1
@@ -260,8 +260,10 @@ enableEmoji = true
           social = true
           # disclaimer (HTML format is supported)
           disclaimer = ""
+        # Home page posts
         [languages.en.params.home.posts]
           enable = true
+          # special amount of posts in each home posts page
           paginate = 6
       # Social config in home page
       [languages.en.params.social]
