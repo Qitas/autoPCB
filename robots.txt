@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://www.qitas.cn/en/sitemap.xml
+Sitemap: https://note.qitas.cn/en/sitemap.xml
