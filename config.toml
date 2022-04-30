@@ -134,7 +134,7 @@ enableEmoji = true
           # 免责声明 (支持 HTML 格式)
           disclaimer = ""
         # 主页文章列表
-        [languages.zh-cn.params.home.notes]
+        [languages.zh-cn.params.home.posts]
           enable = true
           # 主页每页显示文章数量
           paginate = 6
@@ -260,10 +260,8 @@ enableEmoji = true
           social = true
           # disclaimer (HTML format is supported)
           disclaimer = ""
-        # Home page notes
         [languages.en.params.home.notes]
           enable = true
-          # special amount of notes in each home notes page
           paginate = 6
       # Social config in home page
       [languages.en.params.social]
