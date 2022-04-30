@@ -8,8 +8,8 @@ author: "Qitas"
 authorLink: "https://www.qitas.cn"
 description: "这篇文章总结Docker使用."
 
-tags: ["ESP-IDF", "Docker"]
-categories: ["Docker"]
+tags: ["Linux", "Docker"]
+categories: ["Linux"]
 
 lightgallery: true
 ---

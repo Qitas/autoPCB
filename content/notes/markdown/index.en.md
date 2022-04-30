@@ -12,7 +12,7 @@ resources:
   src: "featured-image.png"
 
 tags: ["Markdown", "HTML"]
-categories: ["Markdown"]
+categories: ["editor"]
 
 lightgallery: true
 ---

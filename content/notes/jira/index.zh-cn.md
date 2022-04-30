@@ -9,7 +9,7 @@ authorLink: "https://www.qitas.cn"
 description: "这篇文章总结jira使用."
 
 tags: ["jira", "espressif"]
-categories: ["jira"]
+categories: ["espressif"]
 
 lightgallery: true
 ---

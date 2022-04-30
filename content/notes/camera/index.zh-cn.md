@@ -9,7 +9,7 @@ authorLink: "https://www.qitas.cn"
 description: "这篇文章总结Camera相关知识."
 
 tags: ["Camera", "DVP", "USB"]
-categories: ["sensors"]
+categories: ["IoT"]
 
 lightgallery: true
 ---

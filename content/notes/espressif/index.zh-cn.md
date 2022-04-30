@@ -100,7 +100,7 @@ esptool.py --chip esp32c3 merge_bin -o test_flash_c3.bin 0x0 build/bootloader/bo
 [ESP-ADF](https://github.com/espressif/esp-adf)
 
 
-## ESP-IDF
+## esp-idf
 
 
 ### Docker

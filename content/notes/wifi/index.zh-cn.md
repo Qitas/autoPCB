@@ -1,6 +1,6 @@
 ---
 weight: 4
-title: "WiFi"
+title: "Wi-Fi"
 date: 2022-03-28T11:50:40+08:00
 lastmod: 2022-03-28T12:05:40+08:00
 draft: false
@@ -8,7 +8,7 @@ author: "Qitas"
 authorLink: "https://www.qitas.cn"
 description: "这篇文章总结WiFi."
 
-tags: ["WiFi", "espressif"]
+tags: ["Wi-Fi", "espressif"]
 categories: ["espressif"]
 
 lightgallery: true
