@@ -39,6 +39,15 @@ lightgallery: true
 #include "esp_timer_impl.h"
 ```
 
+调用接口:
+
+* esp_timer_init(void)
+* esp_timer_create(const esp_timer_create_args_t *create_args, esp_timer_handle_t *out_handle)
+* esp_timer_start_once(esp_timer_handle_t timer, uint64_t timeout_us)
+* esp_timer_start_periodic(esp_timer_handle_t timer, uint64_t period)
+* esp_timer_stop(esp_timer_handle_t timer)
+* esp_timer_delete(esp_timer_handle_t timer)
+
 ```结构体
 typedef struct {
     esp_timer_cb_t callback;        //!< Function to call when timer expires
@@ -48,15 +57,6 @@ typedef struct {
     bool skip_unhandled_events;     //!< Skip unhandled events for periodic timers
 } esp_timer_create_args_t;
 ```
-
-调用接口:
-
-* esp_timer_init(void)
-* esp_timer_create(const esp_timer_create_args_t *create_args, esp_timer_handle_t *out_handle)
-* esp_timer_start_once(esp_timer_handle_t timer, uint64_t timeout_us)
-* esp_timer_start_periodic(esp_timer_handle_t timer, uint64_t period)
-* esp_timer_stop(esp_timer_handle_t timer)
-* esp_timer_delete(esp_timer_handle_t timer)
 
 获取状态:
 
@@ -100,10 +100,41 @@ typedef struct {
 
 ### Bluetooth
 
+
+#### BLE
+
+作为蓝牙物联网领域的主要应用模式，适用于 ESP32、ESP32-S3 和 ESP32-C 系列
+
+#### Classic
+
+[CLASSIC BT](https://docs.espressif.com/projects/esp-idf/en/v4.4.1/esp32/api-reference/bluetooth/classic_bt.html) 目前只有ESP32支持，主要应用于音频领域。
+
+* SPP
+* HFP
+* A2DP
+
 ## Protocols
 
+### MQTT
 
-## Peripheral
+{{< admonition tip >}}
+:(far fa-bookmark fa-fw): MQTT is a lightweight publish/subscribe messaging protocol
+{{< /admonition >}}
+
+[ESP-MQTT](https://docs.espressif.com/projects/esp-idf/en/v4.4.1/esp32s3/api-reference/protocols/mqtt.html)
+
+
+### HTTP
+
+### OpenSSL
+
+### Modbus
+
+[ESP-Modbus](https://docs.espressif.com/projects/esp-idf/en/v4.4.1/esp32s3/api-reference/protocols/modbus.html)
+
+
+
+## Peripherals
 
 ### ADC
 
@@ -117,6 +148,7 @@ typedef struct {
 #include "driver/mcpwm.h"
 ```
 ### Touch
+
 {{< admonition tip >}}
 :(far fa-bookmark fa-fw): [ESP32-S3](https://docs.espressif.com/projects/esp-idf/zh_CN/v4.4.1/esp32s3/api-reference/peripherals/touch_pad.html) 最多可支持 14 个电容式触摸传感器通道/GPIO。
 {{< /admonition >}}
