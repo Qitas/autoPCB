@@ -1,8 +1,8 @@
 ---
 weight: 4
 title: "ESP-IDF"
-date: 2022-03-25T11:57:40+08:00
-lastmod: 2022-03-25T12:45:40+08:00
+date: 2022-04-30T11:57:40+08:00
+lastmod: 2022-04-30T12:45:40+08:00
 draft: false
 author: "Qitas"
 authorLink: "https://www.qitas.cn"
@@ -22,13 +22,19 @@ lightgallery: true
 
 相较于传统MCU厂商提供的SDK组件，IDF更接近开源模板，集成丰富的使用案例资源，尤其是广泛吸纳开源资源，是开发趋势的直观呈现，当然这一特性，对于最求底层稳定，上层差异化的应用开发者十分恼火。
 
+## Wireless
+
+### Wi-Fi
+
+### Bluetooth
+
 ## System
 
 
 ### timer
 
 {{< admonition tip >}}
-:(far fa-bookmark fa-fw): [64-bit hardware timer](https://docs.espressif.com/projects/esp-idf/zh_CN/v4.4.1/esp32s3/api-reference/system/esp_timer.html)相较于RTOS软定时器具有更高精度。
+:(far fa-bookmark fa-fw): [64-bit hardware timer](https://docs.espressif.com/projects/esp-idf/zh_CN/v4.4.1/esp32s3/api-reference/system/esp_timer.html)相较于FreeRTOS软定时器具有更高精度。
 {{< /admonition >}}
 
 
@@ -68,6 +74,12 @@ typedef struct {
 
 不同芯片的低功耗策略不同，针对[ESP32-S3](https://docs.espressif.com/projects/esp-idf/zh_CN/v4.4.1/esp32s3/api-reference/system/sleep_modes.html)而言，可以通过不同唤醒源退出。
 
+```头文件
+#include "esp_sleep.h"
+```
+
+唤醒源：
+
 * Timer: esp_sleep_enable_timer_wakeup(uint64_t time_in_us)
 * Touch : esp_sleep_enable_touchpad_wakeup()
 * RTC GPIO : esp_sleep_enable_ext0_wakeup(gpio_num_tgpio_num, int level)
@@ -81,7 +93,33 @@ typedef struct {
 
 #### light sleep
 
+由于芯片时钟域的不同，在极低功耗的Deep Sleep模式下，很多功能是无法使用的，所以可以退而求其次，采用light sleep模式
 
 * UART : esp_sleep_enable_uart_wakeup(int uart_num)
 * GPIO : esp_sleep_enable_uart_wakeup(int uart_num)
 
+## Peripheral
+
+### ADC
+
+```头文件
+#include "driver/adc.h"
+```
+
+### PWM
+
+```头文件
+#include "driver/mcpwm.h"
+```
+### Touch
+{{< admonition tip >}}
+:(far fa-bookmark fa-fw): [ESP32-S3](https://docs.espressif.com/projects/esp-idf/zh_CN/v4.4.1/esp32s3/api-reference/peripherals/touch_pad.html) 最多可支持 14 个电容式触摸传感器通道/GPIO。
+{{< /admonition >}}
+
+
+```头文件
+#include "driver/touch_pad.h"
+```
+
+
+## Protocols

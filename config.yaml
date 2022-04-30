@@ -3,7 +3,7 @@ baseurl: "https://note.qitas.cn/"
 DefaultContentLanguage: "zh-cn"
 hasCJKLanguage: true
 languageCode: "zh-cn"
-title: "QitasNote"
+title: "WorkNote"
 theme: "LoveIt"
 metaDataFormat: "yaml"
 algolia:
