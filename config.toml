@@ -1,4 +1,4 @@
-baseURL = "https://www.qitas.cn/"
+baseURL = "https://note.qitas.cn/"
 # [en, zh-cn, fr, pl, ...] determines default content language
 # [en, zh-cn, fr, pl, ...] 设置默认的语言
 defaultContentLanguage = "zh-cn"
@@ -68,13 +68,13 @@ enableEmoji = true
       [[languages.zh-cn.menu.main]]
         identifier = "Qitas"
         pre = ""
-        name = "主页"
-        url = "https://www.qitas.cn/"
+        name = "文档"
+        url = "https://docs.qitas.cn/"
         title = ""
         weight = 4
     [languages.zh-cn.params]
       # 网站描述
-      description = "QITAS博客"
+      description = "WorkNotes"
       # 网站关键词
       keywords = ["Theme", "Hugo"]
       # 应用图标配置
@@ -192,11 +192,11 @@ enableEmoji = true
         title = ""
         weight = 3
       [[languages.en.menu.main]]
-        identifier = "Qitas"
+        identifier = "Docs"
         pre = ""
         post = ""
-        name = "Qitas"
-        url = "https://www.qitas.cn/"
+        name = "Docs"
+        url = "https://docs.qitas.cn/"
         title = ""
         weight = 4
     [languages.en.params]
