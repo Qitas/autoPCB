@@ -149,8 +149,8 @@ enableEmoji = true
       [languages.zh-cn.params.social]
         GitHub = "Qitas"
         Linkedin = "qitas"
-        Facebook = "qitast"
-        Twitter = "TangQitas"
+        # Facebook = "qitast"
+        # Twitter = "TangQitas"
         Bilibili = "1308059304"
         Zhihu = "qitas"
         Email = "qitas@qitas.cn"
@@ -286,8 +286,8 @@ enableEmoji = true
         Linkedin = "qitas"
         Facebook = "qitast"
         Twitter = "TangQitas"
-        Bilibili = "1308059304"
-        Zhihu = "qitas"
+        # Bilibili = "1308059304"
+        # Zhihu = "qitas"
         Email = "qitas@qitas.cn"
         RSS = false
 
