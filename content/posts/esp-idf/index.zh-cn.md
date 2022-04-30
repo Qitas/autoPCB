@@ -8,14 +8,12 @@ author: "Qitas"
 authorLink: "https://www.qitas.cn"
 description: "这篇文章总结ESP-IDF编程开发."
 
-tags: ["ESP-IDF", "espressif"]
+tags: ["esp-idf", "API", "espressif"]
 categories: ["espressif"]
 
 lightgallery: true
 ---
 
-
-## 简介
 
 [ESP-IDF](https://www.espressif.com/zh-hans/products/sdks/esp-idf) 是乐鑫官方的物联网开发框架，适用于 ESP32、ESP32-S 和 ESP32-C 系列 SoC。它基于 C/C++ 语言提供了一个自给自足的 SDK，方便用户在这些平台上开发通用应用程序。
 
@@ -24,47 +22,37 @@ lightgallery: true
 ## API
 
 
-## 使用
+### timer
 
-### Docker-IDF
-
-https://hub.docker.com/r/espressif/idf
+[64-bit hardware timer](https://docs.espressif.com/projects/esp-idf/zh_CN/v4.4.1/esp32s3/api-reference/system/esp_timer.html)
 
 ```
-docker pull espressif/idf
-```
-
-```build
-sudo docker run --rm --privileged -v $PWD:/project -w /project espressif/idf:release-v4.4 idf.py build
-sudo docker run --rm --privileged -v /dev:/dev -v $PWD:/project -w /project espressif/idf:release-v4.4 idf.py fullclean build flash
-sudo docker run --rm --privileged -v /dev:/dev -v $PWD:/project -w /project espressif/idf:release-v4.4 idf.py set-target esp32s3 build flash
-```
-* -w: 指定命令执行时，所在的路径
-* --rm：容器停止自动删除容器
-
-
-```alias
-alias esp-idf='docker run --rm --privileged -v /dev:/dev -v $PWD:/project -w /project -it espressif/idf:v4.4 bash -c'
-```
-
-执行docker run命令带--rm命令选项，等价于在容器退出后，执行docker rm -v。--rm选项不能与-d同时使用，即只能自动清理foreground容器，不能自动清理detached容器，--rm选项也会清理容器的匿名data volumes。
-
-```
-esp-idf "idf.py -p /dev/ttyUSB0 flash"
-esp-idf "idf.py -p /dev/ttyUSB0 monitor"
-```
-
-### ESP-Update-Server
-
-https://github.com/fito-jaeuklee/ESP32_LOCAL_OTA_SERVER
-
-```
-docker run -tid -p 8000:8000 --name fw-server -v $PWD:/firmware sglahn/ota-server
+#include "esp_timer.h"
+#include "esp_timer_impl.h"
 ```
 
 ```
-url -X GET \
-  http://localhost:8000/firmware \
-    -H 'x-ESP8266-version: 1.0'
+typedef struct {
+    esp_timer_cb_t callback;        //!< Function to call when timer expires
+    void* arg;                      //!< Argument to pass to the callback
+    esp_timer_dispatch_t method;    //!< Call the callback from task or from ISR
+    const char* name;               //!< Timer name, used in esp_timer_dump function
+    bool skip_unhandled_events;     //!< Skip unhandled events for periodic timers
+} esp_timer_create_args_t;
 ```
 
+调用接口
+
+* esp_err_t esp_timer_init(void)
+* esp_err_t esp_timer_create(const esp_timer_create_args_t *create_args, esp_timer_handle_t *out_handle)
+* esp_err_t esp_timer_start_once(esp_timer_handle_t timer, uint64_t timeout_us)
+* esp_err_t esp_timer_start_periodic(esp_timer_handle_t timer, uint64_t period)
+* esp_err_t esp_timer_stop(esp_timer_handle_t timer)
+* esp_err_t esp_timer_delete(esp_timer_handle_t timer)
+
+获取状态
+
+* esp_timer_dump(stdout);
+* int64_t esp_timer_get_time(void);
+* int64_t esp_timer_get_next_alarm(void);
+* bool esp_timer_is_active(esp_timer_handle_t timer);

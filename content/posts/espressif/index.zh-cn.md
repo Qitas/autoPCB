@@ -98,3 +98,49 @@ esptool.py --chip esp32c3 merge_bin -o test_flash_c3.bin 0x0 build/bootloader/bo
 ## ADF
 
 [ESP-ADF](https://github.com/espressif/esp-adf)
+
+
+## ESP-IDF
+
+
+### Docker
+
+https://hub.docker.com/r/espressif/idf
+
+```
+docker pull espressif/idf
+```
+
+```build
+sudo docker run --rm --privileged -v $PWD:/project -w /project espressif/idf:release-v4.4 idf.py build
+sudo docker run --rm --privileged -v /dev:/dev -v $PWD:/project -w /project espressif/idf:release-v4.4 idf.py fullclean build flash
+sudo docker run --rm --privileged -v /dev:/dev -v $PWD:/project -w /project espressif/idf:release-v4.4 idf.py set-target esp32s3 build flash
+```
+* -w: 指定命令执行时，所在的路径
+* --rm：容器停止自动删除容器
+
+
+```alias
+alias esp-idf='docker run --rm --privileged -v /dev:/dev -v $PWD:/project -w /project -it espressif/idf:v4.4 bash -c'
+```
+
+执行docker run命令带--rm命令选项，等价于在容器退出后，执行docker rm -v。--rm选项不能与-d同时使用，即只能自动清理foreground容器，不能自动清理detached容器，--rm选项也会清理容器的匿名data volumes。
+
+```
+esp-idf "idf.py -p /dev/ttyUSB0 flash"
+esp-idf "idf.py -p /dev/ttyUSB0 monitor"
+```
+
+[ESP-Update-Server](https://github.com/fito-jaeuklee/ESP32_LOCAL_OTA_SERVER)
+
+
+```
+docker run -tid -p 8000:8000 --name fw-server -v $PWD:/firmware sglahn/ota-server
+```
+
+```
+url -X GET \
+  http://localhost:8000/firmware \
+    -H 'x-ESP8266-version: 1.0'
+```
+
