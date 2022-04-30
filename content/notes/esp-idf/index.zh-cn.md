@@ -22,11 +22,7 @@ lightgallery: true
 
 相较于传统MCU厂商提供的SDK组件，IDF更接近开源模板，集成丰富的使用案例资源，尤其是广泛吸纳开源资源，是开发趋势的直观呈现，当然这一特性，对于最求底层稳定，上层差异化的应用开发者十分恼火。
 
-## Wireless
 
-### Wi-Fi
-
-### Bluetooth
 
 ## System
 
@@ -53,16 +49,16 @@ typedef struct {
 } esp_timer_create_args_t;
 ```
 
-调用接口
+调用接口:
 
-* esp_err_t esp_timer_init(void)
-* esp_err_t esp_timer_create(const esp_timer_create_args_t *create_args, esp_timer_handle_t *out_handle)
-* esp_err_t esp_timer_start_once(esp_timer_handle_t timer, uint64_t timeout_us)
-* esp_err_t esp_timer_start_periodic(esp_timer_handle_t timer, uint64_t period)
-* esp_err_t esp_timer_stop(esp_timer_handle_t timer)
-* esp_err_t esp_timer_delete(esp_timer_handle_t timer)
+* esp_timer_init(void)
+* esp_timer_create(const esp_timer_create_args_t *create_args, esp_timer_handle_t *out_handle)
+* esp_timer_start_once(esp_timer_handle_t timer, uint64_t timeout_us)
+* esp_timer_start_periodic(esp_timer_handle_t timer, uint64_t period)
+* esp_timer_stop(esp_timer_handle_t timer)
+* esp_timer_delete(esp_timer_handle_t timer)
 
-获取状态
+获取状态:
 
 * esp_timer_dump(stdout);
 * int64_t esp_timer_get_time(void);
@@ -86,17 +82,26 @@ typedef struct {
 * RTC GPIO : esp_sleep_enable_ext1_wakeup(uint64_t mask, esp_sleep_ext1_wakeup_mode_t mode)
 * ULP : esp_sleep_enable_gpio_wakeup(void)
 
-#### deep sleep
+#### Deep sleep
 
 一般而言，追求低功耗会优先考虑极低的可能，对应在ESP芯片上就是Deep Sleep模式
 
 
-#### light sleep
+#### Light sleep
 
 由于芯片时钟域的不同，在极低功耗的Deep Sleep模式下，很多功能是无法使用的，所以可以退而求其次，采用light sleep模式
 
 * UART : esp_sleep_enable_uart_wakeup(int uart_num)
 * GPIO : esp_sleep_enable_uart_wakeup(int uart_num)
+
+## Wireless
+
+### Wi-Fi
+
+### Bluetooth
+
+## Protocols
+
 
 ## Peripheral
 
@@ -122,4 +127,3 @@ typedef struct {
 ```
 
 
-## Protocols
