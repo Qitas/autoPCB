@@ -4,12 +4,12 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Espressif - WorkNotes</title><meta name=Description content="这篇文章总结Espressif编程开发."><meta property="og:title" content="Espressif">
+<title>Espressif - Work Notes</title><meta name=Description content="这篇文章总结Espressif编程开发."><meta property="og:title" content="Espressif">
 <meta property="og:description" content="这篇文章总结Espressif编程开发.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://note.qitas.cn/espressif/"><meta property="og:image" content="https://note.qitas.cn/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-03-15T11:57:40+08:00">
-<meta property="article:modified_time" content="2022-04-30T20:29:36+08:00">
+<meta property="article:modified_time" content="2022-05-02T15:14:53+08:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://note.qitas.cn/logo.png">
 <meta name=twitter:title content="Espressif">
@@ -17,12 +17,12 @@
 <meta name=application-name content="QITAS">
 <meta name=apple-mobile-web-app-title content="QITAS"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://note.qitas.cn/espressif/><link rel=prev href=https://note.qitas.cn/docker/><link rel=next href=https://note.qitas.cn/jira/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Espressif","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/note.qitas.cn\/espressif\/"},"image":[{"@type":"ImageObject","url":"https:\/\/note.qitas.cn\/images\/Apple-Devices-Preview.png","width":3200,"height":2048}],"genre":"posts","keywords":"tools, espressif","wordcount":1551,"url":"https:\/\/note.qitas.cn\/espressif\/","datePublished":"2022-03-15T11:57:40+08:00","dateModified":"2022-04-30T20:29:36+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Qitas","logo":{"@type":"ImageObject","url":"https:\/\/note.qitas.cn\/images\/qitas.png","width":288,"height":288}},"author":{"@type":"Person","name":"Qitas"},"description":"这篇文章总结Espressif编程开发."}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://note.qitas.cn/espressif/><link rel=prev href=https://note.qitas.cn/docker/><link rel=next href=https://note.qitas.cn/jira/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Espressif","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/note.qitas.cn\/espressif\/"},"image":[{"@type":"ImageObject","url":"https:\/\/note.qitas.cn\/images\/Apple-Devices-Preview.png","width":3200,"height":2048}],"genre":"posts","keywords":"tools, espressif","wordcount":1642,"url":"https:\/\/note.qitas.cn\/espressif\/","datePublished":"2022-03-15T11:57:40+08:00","dateModified":"2022-05-02T15:14:53+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Qitas","logo":{"@type":"ImageObject","url":"https:\/\/note.qitas.cn\/images\/qitas.png","width":288,"height":288}},"author":{"@type":"Person","name":"Qitas"},"description":"这篇文章总结Espressif编程开发."}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title=WorkNotes><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNotes</a>
+<a href=/ title="Work Notes"><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>Work Notes</a>
 </div>
 <div class=menu>
 <div class=menu-inner><a class=menu-item href=/posts/ title=笔记> 笔记 </a><a class=menu-item href=/tags/ title=标签> 标签 </a><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=https://docs.qitas.cn/ rel="noopener noreffer" target=_blank> 文档 </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title>简体中文<i class="fas fa-chevron-right fa-fw"></i>
@@ -48,7 +48,7 @@
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title=WorkNotes><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNotes</a>
+<a href=/ title="Work Notes"><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>Work Notes</a>
 </div>
 <div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
@@ -97,7 +97,7 @@
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
-<li><a href=#编程规范>编程规范</a></li>
+<li><a href=#相关简介>相关简介</a></li>
 <li><a href=#开发环境>开发环境</a>
 <ul>
 <li><a href=#固件烧录>固件烧录</a>
@@ -114,89 +114,16 @@
 </li>
 <li><a href=#esp-adf>ESP-ADF</a></li>
 <li><a href=#esp-mdf>ESP-MDF</a></li>
+<li><a href=#编程规范>编程规范</a></li>
 </ul>
 </nav></div>
-</div><div class=content id=content><h2 id=编程规范>编程规范</h2>
+</div><div class=content id=content><h2 id=相关简介>相关简介</h2>
+<p><a href=https://docs.soc.xin/espressif target=_blank rel="noopener noreffer">Espressif</a> 核心优势在于：</p>
 <ul>
-<li>1、任何只在单个源文件中使用的变量或函数都应该被声明为静态的（static）
-<ul>
-<li>1.1 静态变量应该以s_为前缀，以便于识别</li>
+<li>拥抱开源，更接近开发者，在应用上相比竞争对手有更多的积累</li>
+<li>无线连接和网络通信领域，高的起点意味着低的工作量，开发者在ESP构建的相应体系下可以减少自己的体力消耗</li>
 </ul>
-</li>
-<li>2、公共名称（非静态变量和函数）应该用每个组件或每个单元的前缀来命名，以避免命名冲突</li>
-<li>3.非必要避不用缩写（即把data缩短为dat）</li>
-<li>4.每个缩进级别使用4个空格，不要使用制表符来缩进</li>
-<li>5.函数之间空行隔开，函数｛｝中不要以空行开始或结束</li>
-<li>6.只要不严重影响可读性，最大行长为120个字符</li>
-<li>7.始终在if、switch、for等条件和循环关键词后面添加个空格，而不是直接加()
-<ul>
-<li>7.1 在二进制运算符周围添加单个空格</li>
-<li>7.2 单数运算符不需要空格</li>
-<li>7.3 乘法和除法运算符周围可以去掉空格v</li>
-</ul>
-</li>
-<li>8 有时在一行中添加空格使代码垂直对齐，使代码更易读
-<ul>
-<li>8.1 要少用水平对齐，特别是当你预计以后会有新的行被添加到列表中时</li>
-</ul>
-</li>
-<li>9 不要在行末添加尾部的空白</li>
-<li>10 如果暂时禁用某些调用，并打算在将来恢复它，请在相邻行加注释
-<ul>
-<li>10.1 对于#if 0 #endif块。如果不使用就完全删除它。否则，添加注释，解释为什么该块被禁用</li>
-<li>10.2 不要添加修改日期之类的琐碎的注释，因为这些信息都是可以通过git查出的</li>
-</ul>
-</li>
-<li>11 提交的文件应该只包含LF（Unix风格）结尾的文件</li>
-</ul>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>// IDF Master在使用时会遇到LF/CRLF问题，相关解决方式
-git rebase --exec &#39;git diff-tree --no-commit-id --name-only -r HEAD | xargs dos2unix
-&amp;&amp; git commit -a --amend --no-edit --allow-empty&#39; master
-
-//针对单个文件的转码可使用 dos2unix FILENAME
-
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>12 如果不是重构或新加一个文件，不要去改变文件格式，这样便于review修改部分</li>
-<li>13 配置ESP-IDF可禁用断言assert()，在默认配置中，返回false或0的assert条件将调用abort()并触发一个Fatal Error</li>
-<li>14 共用头文件需要预处理保护机制，如 #pragma once / #ifndef FILE_NAME_H &mldr; #endif</li>
-<li>15 共用头文件需要加入 extern &ldquo;C&rdquo; 实现和C++代码的兼容</li>
-<li>16 在#include其他文件时，尽量保持如下顺序</li>
-</ul>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>//对C语言标准库头文件和其他POSIX头文件使用角括号，格式如 #include &lt;stdio.h&gt;
-* C standard library headers.
-* Other POSIX standard headers and common extensions to them (such as sys/queue.h.)
-* Common IDF headers (esp_log.h, esp_system.h, esp_timer.h, esp_sleep.h, etc.)
-* Headers of other components, such as FreeRTOS.
-* Public headers of the current component.
-* Private headers.
-
-</code></pre></td></tr></table>
-</div>
-</div><h2 id=开发环境>开发环境</h2>
+<h2 id=开发环境>开发环境</h2>
 <p>使用ESP系列芯片，和使用传统的MCU最大的差异在于核心思想，ESP的产品可以看作微型服务器，将互联网领域对server的一些应用同步到单片机上，这在很多的应用案例上都有体现，所以对开发者的跨领域知识要求比较高，而官方的开发框架和应用案例，更多是为了让跨度显得没那么大，因为既懂gcc又懂gulp的工程师太稀有。</p>
 <h3 id=固件烧录>固件烧录</h3>
 <h4 id=esptool>esptool</h4>
@@ -310,12 +237,92 @@ esp-idf &#34;idf.py -p /dev/ttyUSB0 monitor&#34;
 </div><h2 id=esp-adf>ESP-ADF</h2>
 <p><a href=https://github.com/espressif/esp-adf target=_blank rel="noopener noreffer">ESP-ADF</a></p>
 <h2 id=esp-mdf>ESP-MDF</h2>
-</div><div class=post-footer id=post-footer>
+<h2 id=编程规范>编程规范</h2>
+<ul>
+<li>1、任何只在单个源文件中使用的变量或函数都应该被声明为静态的（static）
+<ul>
+<li>1.1 静态变量应该以s_为前缀，以便于识别</li>
+</ul>
+</li>
+<li>2、公共名称（非静态变量和函数）应该用每个组件或每个单元的前缀来命名，以避免命名冲突</li>
+<li>3.非必要避不用缩写（即把data缩短为dat）</li>
+<li>4.每个缩进级别使用4个空格，不要使用制表符来缩进</li>
+<li>5.函数之间空行隔开，函数｛｝中不要以空行开始或结束</li>
+<li>6.只要不严重影响可读性，最大行长为120个字符</li>
+<li>7.始终在if、switch、for等条件和循环关键词后面添加个空格，而不是直接加()
+<ul>
+<li>7.1 在二进制运算符周围添加单个空格</li>
+<li>7.2 单数运算符不需要空格</li>
+<li>7.3 乘法和除法运算符周围可以去掉空格v</li>
+</ul>
+</li>
+<li>8 有时在一行中添加空格使代码垂直对齐，使代码更易读
+<ul>
+<li>8.1 要少用水平对齐，特别是当你预计以后会有新的行被添加到列表中时</li>
+</ul>
+</li>
+<li>9 不要在行末添加尾部的空白</li>
+<li>10 如果暂时禁用某些调用，并打算在将来恢复它，请在相邻行加注释
+<ul>
+<li>10.1 对于#if 0 #endif块。如果不使用就完全删除它。否则，添加注释，解释为什么该块被禁用</li>
+<li>10.2 不要添加修改日期之类的琐碎的注释，因为这些信息都是可以通过git查出的</li>
+</ul>
+</li>
+<li>11 提交的文件应该只包含LF（Unix风格）结尾的文件</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>// IDF Master在使用时会遇到LF/CRLF问题，相关解决方式
+git rebase --exec &#39;git diff-tree --no-commit-id --name-only -r HEAD | xargs dos2unix
+&amp;&amp; git commit -a --amend --no-edit --allow-empty&#39; master
+
+//针对单个文件的转码可使用 dos2unix FILENAME
+
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>12 如果不是重构或新加一个文件，不要去改变文件格式，这样便于review修改部分</li>
+<li>13 配置ESP-IDF可禁用断言assert()，在默认配置中，返回false或0的assert条件将调用abort()并触发一个Fatal Error</li>
+<li>14 共用头文件需要预处理保护机制，如 #pragma once / #ifndef FILE_NAME_H &mldr; #endif</li>
+<li>15 共用头文件需要加入 extern &ldquo;C&rdquo; 实现和C++代码的兼容</li>
+<li>16 在#include其他文件时，尽量保持如下顺序</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>//对C语言标准库头文件和其他POSIX头文件使用角括号，格式如 #include &lt;stdio.h&gt;
+* C standard library headers.
+* Other POSIX standard headers and common extensions to them (such as sys/queue.h.)
+* Common IDF headers (esp_log.h, esp_system.h, esp_timer.h, esp_sleep.h, etc.)
+* Headers of other components, such as FreeRTOS.
+* Public headers of the current component.
+* Private headers.
+
+</code></pre></td></tr></table>
+</div>
+</div></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>&nbsp;<a class=git-hash href=https://github.com/Qitas/Note/commit/a93cdeeff83bf7d277f5225957faeb786a755676 target=_blank title="commit by qitas(qitas@qitas.cn) a93cdeeff83bf7d277f5225957faeb786a755676: fix">
-<i class="fas fa-hashtag fa-fw"></i>a93cdee</a></span>
+<span>&nbsp;<a class=git-hash href=https://github.com/Qitas/Note/commit/cc97f8332305a2df49a6a187a8f41870e38f48b1 target=_blank title="commit by qitas(qitas@qitas.cn) cc97f8332305a2df49a6a187a8f41870e38f48b1: update">
+<i class="fas fa-hashtag fa-fw"></i>cc97f83</a></span>
 </div>
 <div class=post-info-license></div>
 </div>

@@ -4,12 +4,12 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Shell - WorkNotes</title><meta name=Description content="这篇文章总结Shell编程开发."><meta property="og:title" content="Shell">
+<title>Shell - Work Notes</title><meta name=Description content="这篇文章总结Shell编程开发."><meta property="og:title" content="Shell">
 <meta property="og:description" content="这篇文章总结Shell编程开发.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://note.qitas.cn/shell/"><meta property="og:image" content="https://note.qitas.cn/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-03-05T16:17:40+08:00">
-<meta property="article:modified_time" content="2022-04-30T20:29:36+08:00">
+<meta property="article:modified_time" content="2022-05-02T15:14:53+08:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://note.qitas.cn/logo.png">
 <meta name=twitter:title content="Shell">
@@ -17,12 +17,12 @@
 <meta name=application-name content="QITAS">
 <meta name=apple-mobile-web-app-title content="QITAS"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://note.qitas.cn/shell/><link rel=prev href=https://note.qitas.cn/vscode/><link rel=next href=https://note.qitas.cn/linux/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Shell","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/note.qitas.cn\/shell\/"},"image":[{"@type":"ImageObject","url":"https:\/\/note.qitas.cn\/images\/Apple-Devices-Preview.png","width":3200,"height":2048}],"genre":"posts","keywords":"Shell, Linux","wordcount":224,"url":"https:\/\/note.qitas.cn\/shell\/","datePublished":"2022-03-05T16:17:40+08:00","dateModified":"2022-04-30T20:29:36+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Qitas","logo":{"@type":"ImageObject","url":"https:\/\/note.qitas.cn\/images\/qitas.png","width":288,"height":288}},"author":{"@type":"Person","name":"Qitas"},"description":"这篇文章总结Shell编程开发."}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://note.qitas.cn/shell/><link rel=prev href=https://note.qitas.cn/vscode/><link rel=next href=https://note.qitas.cn/linux/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Shell","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/note.qitas.cn\/shell\/"},"image":[{"@type":"ImageObject","url":"https:\/\/note.qitas.cn\/images\/Apple-Devices-Preview.png","width":3200,"height":2048}],"genre":"posts","keywords":"Shell, Linux","wordcount":224,"url":"https:\/\/note.qitas.cn\/shell\/","datePublished":"2022-03-05T16:17:40+08:00","dateModified":"2022-05-02T15:14:53+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Qitas","logo":{"@type":"ImageObject","url":"https:\/\/note.qitas.cn\/images\/qitas.png","width":288,"height":288}},"author":{"@type":"Person","name":"Qitas"},"description":"这篇文章总结Shell编程开发."}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title=WorkNotes><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNotes</a>
+<a href=/ title="Work Notes"><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>Work Notes</a>
 </div>
 <div class=menu>
 <div class=menu-inner><a class=menu-item href=/posts/ title=笔记> 笔记 </a><a class=menu-item href=/tags/ title=标签> 标签 </a><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=https://docs.qitas.cn/ rel="noopener noreffer" target=_blank> 文档 </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title>简体中文<i class="fas fa-chevron-right fa-fw"></i>
@@ -48,7 +48,7 @@
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title=WorkNotes><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>WorkNotes</a>
+<a href=/ title="Work Notes"><img class="lazyload logo" src=/svg/loading.min.svg data-src=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png data-srcset="https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 1.5x, https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png 2x" data-sizes=auto alt=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png title=https://mtfirmware.oss-cn-shanghai.aliyuncs.com/qitas.png>Work Notes</a>
 </div>
 <div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
@@ -109,8 +109,8 @@
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>&nbsp;<a class=git-hash href=https://github.com/Qitas/Note/commit/a93cdeeff83bf7d277f5225957faeb786a755676 target=_blank title="commit by qitas(qitas@qitas.cn) a93cdeeff83bf7d277f5225957faeb786a755676: fix">
-<i class="fas fa-hashtag fa-fw"></i>a93cdee</a></span>
+<span>&nbsp;<a class=git-hash href=https://github.com/Qitas/Note/commit/cc97f8332305a2df49a6a187a8f41870e38f48b1 target=_blank title="commit by qitas(qitas@qitas.cn) cc97f8332305a2df49a6a187a8f41870e38f48b1: update">
+<i class="fas fa-hashtag fa-fw"></i>cc97f83</a></span>
 </div>
 <div class=post-info-license></div>
 </div>
