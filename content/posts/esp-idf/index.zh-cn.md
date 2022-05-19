@@ -22,6 +22,12 @@ lightgallery: true
 
 相较于传统MCU厂商提供的SDK组件，IDF更接近开源模板，集成丰富的使用案例资源，尤其是广泛吸纳开源资源，是开发趋势的直观呈现，当然这一特性，对于最求底层稳定，上层差异化的应用开发者十分恼火。
 
+## FreeRTOS
+
+
+```patch
+git apply $ADF_PATH/idf_patches/idf_v4.4_freertos.patch
+```
 
 
 ## System

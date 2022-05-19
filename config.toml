@@ -140,13 +140,13 @@ enableEmoji = true
           paginate = 6
       # 主页的社交信息设置
       [languages.zh-cn.params.social]
-        GitHub = "Qitas"
-        Linkedin = "qitas"
+        # GitHub = "Qitas"
+        # Linkedin = "qitas"
         # Facebook = "qitast"
         # Twitter = "TangQitas"
-        Bilibili = "1308059304"
-        Zhihu = "qitas"
-        Email = "qitas@qitas.cn"
+        # Bilibili = "1308059304"
+        # Zhihu = "qitas"
+        # Email = "qitas@qitas.cn"
         RSS = false
   [languages.en]
     weight = 1
@@ -267,13 +267,13 @@ enableEmoji = true
           paginate = 6
       # Social config in home page
       [languages.en.params.social]
-        GitHub = "Qitas"
-        Linkedin = "qitas"
-        Facebook = "qitast"
-        Twitter = "TangQitas"
+        # GitHub = "Qitas"
+        # Linkedin = "qitas"
+        # Facebook = "qitast"
+        # Twitter = "TangQitas"
         # Bilibili = "1308059304"
         # Zhihu = "qitas"
-        Email = "qitas@qitas.cn"
+        # Email = "qitas@qitas.cn"
         RSS = false
 
 [params]
