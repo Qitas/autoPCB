@@ -10,7 +10,12 @@
 
 
 ```patch
+cd $IDF_PATH
 git apply $ADF_PATH/idf_patches/idf_v4.4_freertos.patch
+
+cd $IDF_PATH
+git am your_demo_path/idf_v4.4_patch/0001-add-freertos-xTaskCreateRestrictedPinnedToCore-api.patch
+git am your_demo_path/idf_v4.4_patch/0001-add-ptread_creat_static-api.patch
 ```
 
 
